@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="643dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="8dp">
+
+
+        <Button
+            android:id="@+id/Processor"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:background="@drawable/cpu"
+            android:text="CPU"
+            android:textColor="#8effffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/MotherBoard"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:background="@drawable/motherboard"
+            android:text="MotherBoard"
+            android:textColor="#8effffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Memory"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:background="@drawable/memory"
+            android:text="Memory"
+            android:textColor="#8effffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/SSD"
+            android:layout_width="415dp"
+            android:layout_height="81dp"
+            android:background="@drawable/ssd"
+            android:text="SSD"
+            android:textColor="#8effffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Graphic"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:background="@drawable/geforcertx2080"
+            android:text="GPU"
+            android:textColor="#8effffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Case"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:background="@drawable/casepsu"
+            android:text="CASE+PSU"
+            android:textColor="#8effffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Buy"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:baselineAligned="false"
+            android:text="BUY"
+            android:background="@drawable/cart"
+            android:textColor="#8effffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
