@@ -105,5 +105,21 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="motherboard">MotherBoard</string>
+    <string name="memory">Memory</string>
+    <string name="cpu">CPU</string>
+    <string name="ssd">SSD</string>
+    <string name="case_psu">CASE+PSU</string>
+    <string name="gpu">GPU</string>
+    <string name="build_your_own">Build Your Own</string>
+    <string name="title_activity_cpu">cpu</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_motherboard">motherboard</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">add</string>
+    <string name="intel_core_i7_8700k_3_7ghz_12mb_cache_s1151v2_box">מעבד אינטל Intel Core i7 8700K 3.7Ghz 12MB Cache s1151v2 - Box</string>
+    <string name="todo">TODO</string>
 
 </resources>
