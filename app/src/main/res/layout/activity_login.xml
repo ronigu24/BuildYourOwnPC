@@ -74,7 +74,15 @@
                 android:text="Login"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/RegisterButt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                />
+
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

@@ -121,5 +121,12 @@
     <string name="add">add</string>
     <string name="intel_core_i7_8700k_3_7ghz_12mb_cache_s1151v2_box">מעבד אינטל Intel Core i7 8700K 3.7Ghz 12MB Cache s1151v2 - Box</string>
     <string name="todo">TODO</string>
+    <string name="title_activity_register_page">RegisterPage</string>
+    <string name="submit">Submit</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="password_butt">password</string>
+    <string name="username_register">Username</string>
 
 </resources>
