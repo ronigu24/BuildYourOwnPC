@@ -18,9 +18,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-import com.example.ronig.myapplication.R;
-
-public class cpu extends AppCompatActivity {
+public class memory extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -40,7 +38,7 @@ public class cpu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cpu);
+        setContentView(R.layout.activity_memory);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -52,6 +50,14 @@ public class cpu extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
     }
 
@@ -59,7 +65,7 @@ public class cpu extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_cpu, menu);
+        getMenuInflater().inflate(R.menu.menu_memory, menu);
         return true;
     }
 
@@ -106,35 +112,9 @@ public class cpu extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView=null;
-
-            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
-
-                case 1:
-
-                     rootView = inflater.inflate(R.layout.fragment_cpu1, container, false);
-
-                    break;
-
-                case 2:
-
-                    rootView = inflater.inflate(R.layout.fragment_cpu2, container, false);
-
-                    break;
-
-                case 3:
-
-                    rootView = inflater.inflate(R.layout.fragment_cpu3, container, false);
-
-                    break;
-
-                case 4:
-
-                    rootView = inflater.inflate(R.layout.fragment_cpu4, container, false);
-
-                    break;
-
-            }
+            View rootView = inflater.inflate(R.layout.fragment_memory, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }
@@ -158,30 +138,8 @@ public class cpu extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 5 total pages.
-            return 4;
-        }
-
-        @Override
-        public CharSequence getPageTitle (int position)
-        {
-            switch (position) {
-
-                case 1:
-                    return "sec0";
-
-                case 2:
-                    return "sec1";
-
-                case 3:
-                    return "sec2";
-
-                case 4:
-                    return "sec3";
-
-
-            }
-            return null;
+            // Show 3 total pages.
+            return 3;
         }
     }
 }

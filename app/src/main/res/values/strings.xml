@@ -128,5 +128,12 @@
     <string name="email">Email</string>
     <string name="password_butt">password</string>
     <string name="username_register">Username</string>
+    <string name="motherboard1">motherboard1</string>
+    <string name="motherboard2">motherboard2</string>
+    <string name="motherboard3">motherboard3</string>
+    <string name="motherboard4">motherboard4</string>
+    <string name="title_activity_memory">memory</string>
+    <string name="cpu4">cpu4</string>
+    <string name="cpu1">cpu1</string>
 
 </resources>

@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cpu4">
+    tools:context=".cpu.cpu4">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <Button
-        android:id="@+id/button4"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/cpu4"
+        android:textSize="30sp"
+        tools:text="cpu4" />
 </FrameLayout>

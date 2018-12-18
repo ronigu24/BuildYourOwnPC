@@ -1,6 +1,7 @@
 package com.example.ronig.myapplication;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -46,6 +47,8 @@ public class RegisterPage extends AppCompatActivity {
                 String pass = password_Input.getText().toString();
                 String mail = email_Input.getText().toString();
                 insertdata(username, pass, mail);
+                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(i);
                 Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
 
             }

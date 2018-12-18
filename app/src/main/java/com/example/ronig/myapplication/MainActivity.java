@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     Button buybutt;
     Button cpubutt;
     Button motherbutt;
+    Button memorybutt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(),motherboard.class);
                 startActivity(i);
             }
+        });
+
+        memorybutt =(Button)findViewById(R.id.memory);
+        memorybutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),memory.class);
+                startActivity(i);
+            }
+
+
+
         });
 
         }

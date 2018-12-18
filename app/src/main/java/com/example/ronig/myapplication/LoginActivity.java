@@ -62,12 +62,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-    Button reg_butt;
+    Button reg_butt, login_butt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
+
 
         reg_butt =(Button)findViewById(R.id.RegisterButt);
         reg_butt.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +96,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignInButton = (Button) findViewById(R.id.Login_butt);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,6 +191,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             cancel = true;
         }
 
+
+        if(email.equals("admin")&&password.equals("admin"))
+        {
+
+            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(i);
+
+        }
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
@@ -205,6 +214,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
+        if(email.equals("admin"))
+            return true;
         return email.contains("@");
     }
 

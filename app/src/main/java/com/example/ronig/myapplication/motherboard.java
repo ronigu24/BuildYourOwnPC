@@ -18,6 +18,8 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.example.ronig.myapplication.R;
+
 public class motherboard extends AppCompatActivity {
 
     /**
@@ -104,10 +106,36 @@ public class motherboard extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_motherboard, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            View rootView=null;
+            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
+
+                case 1:
+
+                    rootView = inflater.inflate(R.layout.fragment_motherboard1, container, false);
+
+                    break;
+
+                case 2:
+
+                    rootView = inflater.inflate(R.layout.fragment_motherboard2, container, false);
+
+                    break;
+
+                case 3:
+
+                    rootView = inflater.inflate(R.layout.fragment_motherboard3, container, false);
+
+                    break;
+
+                case 4:
+
+                    rootView = inflater.inflate(R.layout.fragment_motherboard4, container, false);
+
+                    break;
+
+            }
             return rootView;
+
         }
     }
 
@@ -131,7 +159,7 @@ public class motherboard extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
     }
 }

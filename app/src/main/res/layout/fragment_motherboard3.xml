@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cpu.cpu2">
+    tools:context=".motherboard.motherboard3">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/cpu4"
-        android:textSize="30sp"
-        tools:text="cpu4" />
+        android:text="@string/motherboard3"
+        android:textSize="24sp"
+        tools:text="motherboard3" />
 
 </FrameLayout>
