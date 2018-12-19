@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button cpubutt;
     Button motherbutt;
     Button memorybutt;
+    Button ssdbutt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,5 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        ssdbutt =(Button)findViewById(R.id.ssd);
+        ssdbutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),ssd.class);
+                startActivity(i);
+            }
+
+
+
+        });
         }
 }

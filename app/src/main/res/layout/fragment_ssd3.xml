@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cpu.cpu1">
+    tools:context=".ssd3">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -35,9 +35,9 @@
             android:layout_marginStart="46dp"
             android:layout_marginLeft="46dp"
             android:layout_marginTop="44dp"
-            android:layout_marginEnd="42dp"
-            android:layout_marginRight="42dp"
-            android:text="@string/intel_core_i7_8700k_3_7ghz_12mb_cache_s1151v2_box"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:text="@string/samsung_ssd_evo_970_1tb"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,17 +46,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="235dp"
-            android:layout_height="253dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginLeft="88dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginRight="88dp"
-            android:layout_marginBottom="24dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/i7_8770k"
+            android:id="@+id/imageView5"
+            android:layout_width="379dp"
+            android:layout_height="343dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="125dp"
+            android:contentDescription="@string/ssd970"
+            android:src="@drawable/ssd970"
             app:layout_constraintBottom_toTopOf="@+id/addcpu3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

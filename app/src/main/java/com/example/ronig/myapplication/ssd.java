@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class memory extends AppCompatActivity {
+public class ssd extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -38,7 +38,7 @@ public class memory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memory);
+        setContentView(R.layout.activity_ssd);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -51,13 +51,14 @@ public class memory extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
 
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_memory, menu);
+        getMenuInflater().inflate(R.menu.menu_ssd, menu);
         return true;
     }
 
@@ -104,34 +105,37 @@ public class memory extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView=null;
+            View rootView = null;
+
+
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
 
                 case 1:
 
-                    rootView = inflater.inflate(R.layout.fragment_memory1, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_ssd1, container, false);
 
                     break;
 
                 case 2:
 
-                    rootView = inflater.inflate(R.layout.fragment_memory2, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_ssd2, container, false);
 
                     break;
 
                 case 3:
 
-                    rootView = inflater.inflate(R.layout.fragment_memory3, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_ssd3, container, false);
 
                     break;
 
                 case 4:
 
-                    rootView = inflater.inflate(R.layout.fragment_memory4, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_ssd4, container, false);
 
                     break;
 
             }
+
             return rootView;
         }
     }

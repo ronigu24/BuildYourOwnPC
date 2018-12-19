@@ -135,5 +135,12 @@
     <string name="title_activity_memory">memory</string>
     <string name="cpu4">cpu4</string>
     <string name="cpu1">cpu1</string>
+    <string name="hyperx">TODO</string>
+    <string name="fury_hyperx_ddr4_8gb">Fury HyperX DDR4 8gb</string>
+    <string name="motherboardpng">TODO</string>
+    <string name="gigabyte_z97x_gaming_5">GIGABYTE Z97X-Gaming 5</string>
+    <string name="title_activity_ssd">ssd</string>
+    <string name="samsung_ssd_evo_970_1tb">Samsung SSD EVO 970 1TB</string>
+    <string name="ssd970">TODO</string>
 
 </resources>
