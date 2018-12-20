@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.DatabaseErrorHandler;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME= "register1.db";
-    public static final String TABLE_NAME="register";
+    public static final String DATABASE_NAME= "Users.db";
+    public static final String TABLE_NAME="User";
     public static final String COl_1="ID";
     public static final String COl_2="UserName";
     public static final String COl_3="Password";
