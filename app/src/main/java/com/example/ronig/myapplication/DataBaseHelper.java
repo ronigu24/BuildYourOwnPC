@@ -2,37 +2,92 @@ package com.example.ronig.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.DatabaseErrorHandler;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME= "Users.db";
-    public static final String TABLE_NAME="User";
-    public static final String COl_1="ID";
-    public static final String COl_2="UserName";
-    public static final String COl_3="Password";
-    public static final String COl_4="Email";
 
+    // Database Version
+    private static final int DATABASE_VERSION = 1;
 
+    // Database Name
+    private static final String DATABASE_NAME = "acounts.db";
 
+    // User table name
+    private static final String TABLE_USER = "user";
 
-    public DataBaseHelper( Context context ) {
-        super(context, DATABASE_NAME, null, 1);
+    // User Table Columns names
+    private static final String COLUMN_USER_ID = "ID";
+    private static final String COLUMN_USER_NAME = "Username";
+    private static final String COLUMN_USER_PASSWORD = "Password";
+    private static final String COLUMN_USER_EMAIL = "Email";
+
+    // create table sql query
+    private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
+            + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
+            + COLUMN_USER_PASSWORD + " TEXT," + COLUMN_USER_EMAIL + " TEXT" + ")";
+
+    // drop table sql query
+    private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
+
+    /**
+     * Constructor
+     *
+     * @param context
+     */
+    public DataBaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE" +TABLE_NAME+ " ( INTEGER PRIMARY KEY AUTOINCREMENT, " + COl_2 +"TEXT" + COl_3 +"TEXT" + COl_4 + "TEXT)");
-
+        db.execSQL(CREATE_USER_TABLE);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE EXISTS" + TABLE_NAME);
 
+        //Drop User Table if exist
+        db.execSQL(DROP_USER_TABLE);
+
+        // Create tables again
         onCreate(db);
 
     }
+
+
+    public void addUser(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USER_NAME, user.getName());
+        values.put(COLUMN_USER_PASSWORD, user.getPassword());
+        values.put(COLUMN_USER_EMAIL, user.getEmail());
+
+        // Inserting Row
+        db.insert(TABLE_USER, null, values);
+        db.close();
+    }
+
+    public boolean isEmailExists(String Email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_USER,// Selecting Table
+                new String[]{COLUMN_USER_ID, COLUMN_USER_NAME, COLUMN_USER_PASSWORD, COLUMN_USER_EMAIL},//Selecting columns want to query
+                COLUMN_USER_EMAIL + "=?",
+                new String[]{Email},//Where clause
+                null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {
+            //if cursor has value then in user database there is user associated with this given email so return true
+            return true;
+        }
+
+        //if email does not exist return false
+        return false;
+    }
+
 
 }

@@ -5,11 +5,9 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ButtonBarLayout;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
@@ -17,53 +15,113 @@ import android.widget.Toast;
 
 public class RegisterPage extends AppCompatActivity {
 
-
-
-    SQLiteOpenHelper OpenHelper;
-    SQLiteDatabase db;
-    EditText username_Input, password_Input, email_Input;
-    Button submit_btn;
-
+    DataBaseHelper db;
+    EditText editTextUserName;
+    EditText editTextEmail;
+    EditText editTextPassword;
+    Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
+        db = new DataBaseHelper(this);
 
+        initViews();
 
-
-        username_Input = (EditText)findViewById(R.id.username_Input);
-        password_Input = (EditText)findViewById(R.id.password_Input);
-        email_Input = (EditText)findViewById(R.id.email_Input);
-        submit_btn = (Button)findViewById(R.id.submit_btn);
-
-        OpenHelper = new DataBaseHelper(this);
-
-        submit_btn.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db = OpenHelper.getWritableDatabase();
-                String username = username_Input.getText().toString();
-                String pass = password_Input.getText().toString();
-                String mail = email_Input.getText().toString();
-                insertdata(username, pass, mail);
-                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(i);
-                Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
 
+                if (validate()) {
+                    String UserName = editTextUserName.getText().toString();
+                    String Password = editTextPassword.getText().toString();
+                    String Email = editTextEmail.getText().toString();
+
+
+                    if (!db.isEmailExists(Email)) {
+
+                        //Email does not exist now add new user to database
+                        db.addUser(new User(null, UserName, Password, Email));
+                        //Snackbar.make(registerButton, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "User created successfully! Please Login", Toast.LENGTH_SHORT).show();
+                        finish();
+                        Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+                        startActivity(i);
+                    } else {
+
+                        //Email exists with email input provided so show error user already exist
+                        //Snackbar.make(registerButton, "User already exists with same email ", Snackbar.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "User already exists with same email", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
             }
 
         });
+    }
 
+    private void initViews() {
+        editTextUserName = (EditText) findViewById(R.id.username_Input);
+        editTextPassword = (EditText) findViewById(R.id.password_Input);
+        editTextEmail = (EditText) findViewById(R.id.email_Input);
+        registerButton = (Button) findViewById(R.id.submit_btn);
+    }
 
-            }
+    //This method is used to validate input given by user
+    public boolean validate() {
+        boolean valid = false;
 
-            public void insertdata(String username, String password, String mail) {
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(DataBaseHelper.COl_2, username);
-                contentValues.put(DataBaseHelper.COl_3, password);
-                contentValues.put(DataBaseHelper.COl_4, mail);
-                long id = db.insert(DataBaseHelper.TABLE_NAME, null, contentValues);
+        //Get values from EditText fields
+        String UserName = editTextUserName.getText().toString();
+        String Password = editTextPassword.getText().toString();
+        String Email = editTextEmail.getText().toString();
+
+        //Handling validation for UserName field
+        if (UserName.isEmpty()) {
+            valid = false;
+            //textInputLayoutUserName.setError("Please enter valid username!");
+            Toast.makeText(getApplicationContext(), "Please enter valid username!", Toast.LENGTH_SHORT).show();
+        } else {
+            if (UserName.length() > 5) {
+                valid = true;
+                //textInputLayoutUserName.setError(null);
+                //Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
+            } else {
+                valid = false;
+                //textInputLayoutUserName.setError("Username is to short!");
+                Toast.makeText(getApplicationContext(), "Username is to short!", Toast.LENGTH_SHORT).show();
             }
         }
 
+        //Handling validation for Password field
+        if (Password.isEmpty()) {
+            valid = false;
+            //textInputLayoutPassword.setError("Please enter valid password!");
+            Toast.makeText(getApplicationContext(), "Please enter valid password!", Toast.LENGTH_SHORT).show();
+        } else {
+            if (Password.length() > 5) {
+                valid = true;
+                //textInputLayoutPassword.setError(null);
+                //Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
+            } else {
+                valid = false;
+                //textInputLayoutPassword.setError("Password is to short!");
+                Toast.makeText(getApplicationContext(), "Password is to short!", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        //Handling validation for Email field
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
+            valid = false;
+            //textInputLayoutEmail.setError("Please enter valid email!");
+            Toast.makeText(getApplicationContext(), "Please enter valid email!", Toast.LENGTH_SHORT).show();
+        } else {
+            valid = true;
+            //textInputLayoutEmail.setError(null);
+            //Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
+        }
+
+        return valid;
+    }
+}
