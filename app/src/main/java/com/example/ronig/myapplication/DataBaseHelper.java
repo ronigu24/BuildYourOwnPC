@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.DatabaseErrorHandler;
+import android.util.Log;
+import android.widget.Toast;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
@@ -13,7 +15,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "acounts.db";
+    private static final String DATABASE_NAME = "Accounts.db";
 
     // User table name
     private static final String TABLE_USER = "user";
@@ -87,6 +89,29 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         //if email does not exist return false
         return false;
+    }
+
+    public User Authenticate(User user) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_USER,// Selecting Table
+                new String[]{COLUMN_USER_ID, COLUMN_USER_NAME, COLUMN_USER_PASSWORD, COLUMN_USER_EMAIL},//Selecting columns want to query
+                COLUMN_USER_NAME +"=?",
+                new String[]{user.getName()},//Where clause
+                null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {
+
+            //if cursor has value then in user database there is user associated with this given email
+            User user1 = new User(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
+
+            //Match both passwords check they are same or not
+          if (user.getPassword().equalsIgnoreCase(user1.getPassword())) {
+               return user1;
+           }
+        }
+
+        //if user password does not matches or there is no record with that email then return @false
+        return null;
     }
 
 

@@ -54,7 +54,8 @@
         <activity
             android:name=".ssd"
             android:label="@string/title_activity_ssd"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".LoginPage"></activity>
     </application>
 
 </manifest>

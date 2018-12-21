@@ -46,7 +46,7 @@ public class RegisterPage extends AppCompatActivity {
                         //Snackbar.make(registerButton, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
                         Toast.makeText(getApplicationContext(), "User created successfully! Please Login", Toast.LENGTH_SHORT).show();
                         finish();
-                        Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+                        Intent i = new Intent(getApplicationContext(),LoginPage.class);
                         startActivity(i);
                     } else {
 
