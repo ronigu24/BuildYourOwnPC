@@ -55,7 +55,15 @@
             android:name=".ssd"
             android:label="@string/title_activity_ssd"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".LoginPage"></activity>
+        <activity android:name=".LoginPage" />
+        <activity
+            android:name=".Case"
+            android:label="@string/title_activity_case"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".gpu"
+            android:label="@string/title_activity_gpu"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

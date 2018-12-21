@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     Button motherbutt;
     Button memorybutt;
     Button ssdbutt;
+    Button casebutt;
+    Button gpubutt;
 
 
 
@@ -76,11 +78,24 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(),ssd.class);
                 startActivity(i);
             }
-
-
-
+        });
+        casebutt =(Button)findViewById(R.id.case1);
+        casebutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Case.class);
+                startActivity(i);
+            }
         });
 
+        gpubutt =(Button)findViewById(R.id.gpu);
+        gpubutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),gpu.class);
+                startActivity(i);
+            }
+        });
 
 
 

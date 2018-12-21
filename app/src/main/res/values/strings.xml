@@ -142,5 +142,10 @@
     <string name="title_activity_ssd">ssd</string>
     <string name="samsung_ssd_evo_970_1tb">Samsung SSD EVO 970 1TB</string>
     <string name="ssd970">TODO</string>
+    <string name="title_activity_case">Case</string>
+    <string name="password1">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="title_activity_gpu">gpu</string>
 
 </resources>

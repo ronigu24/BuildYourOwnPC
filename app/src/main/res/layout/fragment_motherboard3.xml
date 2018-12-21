@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".motherboard.motherboard3">
+    tools:context=".motherboard3">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -56,7 +56,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="118dp"
             android:contentDescription="@string/motherboardpng"
-            android:src="@drawable/mothetboardpng"
+            android:src="@drawable/motherboard3"
             app:layout_constraintBottom_toTopOf="@+id/addcpu3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
