@@ -33,6 +33,7 @@ public class cpu extends AppCompatActivity {
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
+
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -45,6 +46,7 @@ public class cpu extends AppCompatActivity {
         setContentView(R.layout.activity_cpu);
 
         addCpuButton = (Button) findViewById(R.id.addCpuButton);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -112,11 +114,13 @@ public class cpu extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView=null;
 
+            String text = "";
+
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
 
                 case 1:
-
-                     rootView = inflater.inflate(R.layout.fragment_cpu1, container, false);
+                    
+                    rootView = inflater.inflate(R.layout.fragment_cpu1, container, false);
 
                     break;
 
@@ -139,6 +143,9 @@ public class cpu extends AppCompatActivity {
                     break;
 
             }
+
+
+
             return rootView;
         }
     }
