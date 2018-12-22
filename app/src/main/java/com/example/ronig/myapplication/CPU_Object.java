@@ -1,4 +1,4 @@
 package com.example.ronig.myapplication;
 
-public class Computer {
+public class CPU_Object extends Product {
 }
