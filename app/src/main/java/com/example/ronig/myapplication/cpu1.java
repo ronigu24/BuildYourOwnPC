@@ -3,11 +3,15 @@ package com.example.ronig.myapplication;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -27,6 +31,7 @@ public class cpu1 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -61,21 +66,42 @@ public class cpu1 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cpu1, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_cpu1, container, false);
+
+        Button addCpuButton1 = (Button) getView().findViewById(R.id.addCpuButton1);
+
+        addCpuButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"Hello World!",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
+
+        //return inflater.inflate(R.layout.fragment_cpu1, container, false);
     }
+
+    /*public void setText(String text){
+        TextView textView = (TextView) getView().findViewById(R.id.textView1);
+        textView.setText(text);
+    }*/
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+
+
     }
 
     @Override
@@ -107,6 +133,9 @@ public class cpu1 extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
+
+
+
         void onFragmentInteraction(Uri uri);
     }
 }

@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ronig.myapplication.R;
 
@@ -114,12 +115,10 @@ public class cpu extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView=null;
 
-            String text = "";
-
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
 
                 case 1:
-                    
+
                     rootView = inflater.inflate(R.layout.fragment_cpu1, container, false);
 
                     break;
@@ -143,9 +142,6 @@ public class cpu extends AppCompatActivity {
                     break;
 
             }
-
-
-
             return rootView;
         }
     }
