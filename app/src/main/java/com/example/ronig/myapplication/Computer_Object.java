@@ -18,6 +18,4 @@ public class Computer_Object {
         this.gpu_name = gpu_name;
         this.case_name = case_name;
     }
-
-
 }

@@ -17,7 +17,7 @@
         <!-- TODO: Update blank fragment layout -->
 
         <Button
-            android:id="@+id/addcpu3"
+            android:id="@+id/addCpuButton"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             android:layout_marginBottom="24dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/casepsu"
-            app:layout_constraintBottom_toTopOf="@+id/addcpu3"
+            app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
