@@ -29,14 +29,14 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/ssd3"
             android:layout_width="323dp"
             android:layout_height="56dp"
-            android:layout_marginStart="46dp"
-            android:layout_marginLeft="46dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="44dp"
-            android:layout_marginEnd="44dp"
-            android:layout_marginRight="44dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
             android:text="@string/samsung_ssd_evo_970_1tb"
             android:textSize="20sp"
             android:textStyle="bold"

@@ -33,6 +33,12 @@ public class case4 extends Fragment {
         // Required empty public constructor
     }
 
+
+    public void myClickMethod(View v) {
+        switch(v.getId()) {
+            // Just like you were doing
+        }
+    }
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.

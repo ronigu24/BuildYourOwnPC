@@ -1,13 +1,14 @@
 package com.example.ronig.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +30,7 @@ public class cpu2 extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    Button addbutt;
     public cpu2() {
         // Required empty public constructor
     }
@@ -49,6 +51,7 @@ public class cpu2 extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
@@ -58,6 +61,7 @@ public class cpu2 extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override

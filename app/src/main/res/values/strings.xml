@@ -147,5 +147,22 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="title_activity_gpu">gpu</string>
+    <string name="_399">399 ₪</string>
+    <string name="_370">370 ₪</string>
+    <string name="_200">200 ₪</string>
+    <string name="_299">299 ₪</string>
+    <string name="_1800">1800 ₪</string>
+    <string name="_930">930 ₪</string>
+    <string name="_670">670 ₪</string>
+    <string name="_1120">1120 ₪</string>
+    <string name="amd_ryzen_7_1800x_8_cores_3_6_ghz">AMD Ryzen 7 1800X, 8 cores, 3.6 Ghz</string>
+    <string name="_360">360 ₪</string>
+    <string name="g_skill_ddr4_32gb_memory_kit_4400mhz">G.SKILL DDR4 32GB Memory Kit 4400MHz</string>
+    <string name="_2320">2320 ₪</string>
+    <string name="g_skill_announces_32gb_ddr4_4266mhz_trident_z_rgb_memory_kits">G.Skill Announces 32GB DDR4-4266MHz Trident Z RGB Memory Kits</string>
+    <string name="_2110">2110 ₪</string>
+    <string name="_8gb_2133mhz_kingston_kvr21n15s8_8">8GB 2133Mhz Kingston KVR21N15S8/8</string>
+    <string name="_435">435 ₪</string>
+    <string name="_750">750 ₪</string>
 
 </resources>

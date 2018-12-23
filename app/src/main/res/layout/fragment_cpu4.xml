@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cpu.cpu4">
+
+    tools:context=".cpu4">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -17,7 +18,7 @@
         <!-- TODO: Update blank fragment layout -->
 
         <Button
-            android:id="@+id/addCpuButton"
+            android:id="@+id/addCpuButton4"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,39 +31,59 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="323dp"
+            android:layout_width="281dp"
             android:layout_height="56dp"
             android:layout_marginStart="46dp"
             android:layout_marginLeft="46dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="47dp"
             android:layout_marginRight="47dp"
-            android:text="@string/intel_core_i7_8700k_3_7ghz_12mb_cache_s1151v2_box"
+            android:layout_marginBottom="30dp"
+            android:text="@string/amd_ryzen_7_1800x_8_cores_3_6_ghz"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/price8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.513"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/price8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="173dp"
+            android:layout_marginLeft="173dp"
+            android:layout_marginTop="31dp"
+            android:layout_marginEnd="173dp"
+            android:layout_marginRight="173dp"
+            android:layout_marginBottom="28dp"
+            android:text="@string/_1120"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="394dp"
             android:layout_height="466dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginLeft="88dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginRight="88dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/cpu4"
-            app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
+            app:layout_constraintBottom_toTopOf="@+id/addCpuButton4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/price8" />
 
     </android.support.constraint.ConstraintLayout>
 
