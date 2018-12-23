@@ -1,10 +1,12 @@
 package com.example.ronig.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,7 @@ public class cpu1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public Button button;
 
     private OnFragmentInteractionListener mListener;
 
@@ -66,6 +69,7 @@ public class cpu1 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
     }
 
 
@@ -75,18 +79,23 @@ public class cpu1 extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_cpu1, container, false);
 
-        Button addCpuButton1 = (Button) getView().findViewById(R.id.addCpuButton1);
+        Button button = (Button)view.findViewById(R.id.addCpu_Button_1);
 
-        addCpuButton1.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"Hello World!",Toast.LENGTH_SHORT).show();
+
+                FragmentTransaction fr=getFragmentManager().beginTransaction();
+                Toast.makeText(getActivity(), "CPU has been added", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getActivity(),MainActivity.class);
+                startActivity(i);
             }
         });
+                //fr.remove(new cpu2());
+                //fr.commit();
 
         return view;
 
-        //return inflater.inflate(R.layout.fragment_cpu1, container, false);
     }
 
     /*public void setText(String text){
@@ -104,7 +113,7 @@ public class cpu1 extends Fragment {
 
     }
 
-    @Override
+    /*@Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
@@ -113,7 +122,7 @@ public class cpu1 extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-    }
+    }*/
 
     @Override
     public void onDetach() {
