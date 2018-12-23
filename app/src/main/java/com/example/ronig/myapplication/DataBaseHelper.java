@@ -84,10 +84,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {
             //if cursor has value then in user database there is user associated with this given email so return true
+            db.close();
             return true;
         }
 
         //if email does not exist return false
+        db.close();
         return false;
     }
 
@@ -106,11 +108,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             //Match both passwords check they are same or not
           if (user.getPassword().equalsIgnoreCase(user1.getPassword())) {
+              cursor.close();
                return user1;
            }
         }
 
         //if user password does not matches or there is no record with that email then return @false
+        cursor.close();
         return null;
     }
 

@@ -34,8 +34,6 @@ public class cpu1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Button button;
-
     private OnFragmentInteractionListener mListener;
 
     public cpu1() {
@@ -72,7 +70,6 @@ public class cpu1 extends Fragment {
 
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,22 +83,17 @@ public class cpu1 extends Fragment {
             public void onClick(View v) {
 
                 FragmentTransaction fr=getFragmentManager().beginTransaction();
-                Toast.makeText(getActivity(), "CPU has been added", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-            }
-        });
+                Toast.makeText(getActivity(), "Failed to log in , please try again", Toast.LENGTH_SHORT).show();
+
                 //fr.remove(new cpu2());
                 //fr.commit();
+            }
+        });
+
 
         return view;
 
     }
-
-    /*public void setText(String text){
-        TextView textView = (TextView) getView().findViewById(R.id.textView1);
-        textView.setText(text);
-    }*/
 
 
     // TODO: Rename method, update argument and hook method into UI event
