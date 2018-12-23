@@ -13,7 +13,7 @@ public class LoginPage extends AppCompatActivity {
     EditText inputUsername, inputPassword;
     Button loginButton, registerButton;
     DataBaseHelper db;
-
+    public static User currentUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class LoginPage extends AppCompatActivity {
                     String Password = inputPassword.getText().toString();
 
                     //Authenticate user
-                    User currentUser = db.Authenticate(new User(null, Username, Password, null));
+                     currentUser = db.Authenticate(new User(null, Username, Password, null));
 
                     //Check Authentication is successful or not
                     if (currentUser != null) {

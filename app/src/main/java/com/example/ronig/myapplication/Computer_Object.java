@@ -5,15 +5,25 @@ public class Computer_Object {
     Case_Object case_name;
     CPU_Object cpu_name;
     GPU_Object gpu_name;
-    Memory_Object Memory_name;
-    MotherBoard_Object MotherBoard_name;
+    Memory_Object memory_name;
+    MotherBoard_Object motherboard_name;
     SSD_Object ssd_name;
 
-    Computer_Object(CPU_Object cpu_name, MotherBoard_Object motherBoard_name, Memory_Object memory_name
+    public Computer_Object()
+    {
+        this.cpu_name=new CPU_Object();
+        this.case_name=new Case_Object();
+        this.gpu_name=new GPU_Object();
+        this.memory_name=new Memory_Object();
+        this.motherboard_name=new MotherBoard_Object();
+        this.ssd_name=new SSD_Object();
+
+    }
+   public Computer_Object(CPU_Object cpu_name, MotherBoard_Object motherBoard_name, Memory_Object memory_name
     ,SSD_Object ssd_name, GPU_Object gpu_name, Case_Object case_name) {
         this.cpu_name = cpu_name;
-        this.MotherBoard_name = motherBoard_name;
-        this.Memory_name = memory_name;
+        this.motherboard_name = motherBoard_name;
+        this.memory_name = memory_name;
         this.ssd_name = ssd_name;
         this.gpu_name = gpu_name;
         this.case_name = case_name;

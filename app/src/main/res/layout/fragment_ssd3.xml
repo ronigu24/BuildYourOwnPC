@@ -37,7 +37,7 @@
             android:layout_marginTop="44dp"
             android:layout_marginEnd="45dp"
             android:layout_marginRight="45dp"
-            android:text="@string/samsung_ssd_evo_970_1tb"
+            android:text="@string/kingston_ssdnow_v100_128gb_ssd"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,8 +59,26 @@
             android:src="@drawable/ssd3"
             app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/price18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="170dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="173dp"
+            android:layout_marginRight="173dp"
+            android:layout_marginBottom="28dp"
+            android:text="@string/_110"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/ssd3" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -79,7 +79,7 @@ public class cpu1 extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_cpu1, container, false);
 
-        Button button = (Button)view.findViewById(R.id.addCpu_Button_1);
+        Button button = (Button)view.findViewById(R.id.addCpuButton1);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

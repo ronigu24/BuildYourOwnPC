@@ -30,18 +30,18 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="323dp"
+            android:layout_width="272dp"
             android:layout_height="56dp"
-            android:layout_marginStart="46dp"
-            android:layout_marginLeft="46dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
-            android:text="@string/intel_core_i7_8700k_3_7ghz_12mb_cache_s1151v2_box"
+            android:text="@string/cougar_mx350_tg"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

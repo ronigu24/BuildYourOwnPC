@@ -31,13 +31,13 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="323dp"
-            android:layout_height="56dp"
+            android:layout_height="72dp"
             android:layout_marginStart="46dp"
             android:layout_marginLeft="46dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="44dp"
             android:layout_marginRight="44dp"
-            android:text="@string/gigabyte_z97x_gaming_5"
+            android:text="@string/intel_b360_aorus_motherboard_with_rgb_fusion_with_digital_leds"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +58,22 @@
             android:contentDescription="@string/motherboardpng"
             android:src="@drawable/motherboard2"
             app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/price8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="173dp"
+            android:layout_marginLeft="173dp"
+            android:layout_marginTop="66dp"
+            android:layout_marginEnd="173dp"
+            android:layout_marginRight="173dp"
+            android:text="@string/_610"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />

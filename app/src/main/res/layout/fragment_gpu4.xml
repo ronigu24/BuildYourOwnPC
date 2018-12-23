@@ -30,14 +30,14 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="323dp"
-            android:layout_height="56dp"
+            android:layout_width="300dp"
+            android:layout_height="67dp"
             android:layout_marginStart="46dp"
             android:layout_marginLeft="46dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="39dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
-            android:text="@string/intel_core_i7_8700k_3_7ghz_12mb_cache_s1151v2_box"
+            android:text="@string/geforce_gtx_1070_windforce_8g"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,8 +47,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="235dp"
-            android:layout_height="253dp"
+            android:layout_width="289dp"
+            android:layout_height="287dp"
             android:layout_marginStart="88dp"
             android:layout_marginLeft="88dp"
             android:layout_marginTop="200dp"
@@ -56,11 +56,29 @@
             android:layout_marginRight="88dp"
             android:layout_marginBottom="24dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/geforcertx2080"
+            android:src="@drawable/gpu4"
             app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/price24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="173dp"
+            android:layout_marginLeft="173dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="173dp"
+            android:layout_marginRight="173dp"
+            android:layout_marginBottom="148dp"
+            android:text="@string/_2200"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 

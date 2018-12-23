@@ -6,12 +6,14 @@ public class User {
     private String name;
     private String password;
     private String email;
+    public Computer_Object my_pc;
 
     User(String id, String name, String password, String email){
         this.id = id;
         this.name = name;
         this.password = password;
         this.email = email;
+        this.my_pc=new Computer_Object();
     }
 
     public String getId() {
@@ -45,4 +47,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void build_pc(Computer_Object my_pc){this.my_pc=my_pc;}
 }

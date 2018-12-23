@@ -40,8 +40,7 @@ public class gpu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gpu);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -50,14 +49,6 @@ public class gpu extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
     }
 
@@ -112,11 +103,37 @@ public class gpu extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_gpu, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            View rootView=null;
+            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
+
+                case 1:
+
+                    rootView = inflater.inflate(R.layout.fragment_gpu1, container, false);
+
+                    break;
+
+                case 2:
+
+                    rootView = inflater.inflate(R.layout.fragment_gpu2, container, false);
+
+                    break;
+
+                case 3:
+
+                    rootView = inflater.inflate(R.layout.fragment_gpu3, container, false);
+
+                    break;
+
+                case 4:
+
+                    rootView = inflater.inflate(R.layout.fragment_gpu4, container, false);
+
+                    break;
+
+            }
             return rootView;
         }
+
     }
 
     /**
@@ -139,7 +156,7 @@ public class gpu extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
     }
 }

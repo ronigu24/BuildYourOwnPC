@@ -37,7 +37,7 @@
             android:layout_marginTop="44dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
-            android:text="@string/intel_core_i7_8700k_3_7ghz_12mb_cache_s1151v2_box"
+            android:text="@string/gigabyte_gtx_950_2gb"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,8 +47,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="235dp"
-            android:layout_height="253dp"
+            android:layout_width="301dp"
+            android:layout_height="286dp"
             android:layout_marginStart="88dp"
             android:layout_marginLeft="88dp"
             android:layout_marginTop="200dp"
@@ -56,11 +56,28 @@
             android:layout_marginRight="88dp"
             android:layout_marginBottom="24dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/graphiccard3"
+            android:src="@drawable/gpu3"
             app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/price23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="173dp"
+            android:layout_marginLeft="173dp"
+            android:layout_marginEnd="173dp"
+            android:layout_marginRight="173dp"
+            android:layout_marginBottom="102dp"
+            android:text="@string/_450"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
