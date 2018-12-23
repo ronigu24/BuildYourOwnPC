@@ -56,7 +56,7 @@
             android:layout_marginRight="88dp"
             android:layout_marginBottom="24dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/casepsu"
+            android:src="@drawable/case1"
             app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.506"

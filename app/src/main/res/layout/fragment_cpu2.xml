@@ -57,7 +57,7 @@
             android:layout_marginRight="88dp"
             android:layout_marginBottom="24dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/i7_8770k"
+            android:src="@drawable/cpu2"
             app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.481"
