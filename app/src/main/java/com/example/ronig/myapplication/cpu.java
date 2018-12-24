@@ -53,8 +53,8 @@ public class cpu extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction().add(R.id.fragment_cpu, new cpu1());
-        fragmentTransaction.commit();
+        //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction().add(R.id.fragment_cpu,new cpu1());
+      //  fragmentTransaction.commit();
 
     }
 
@@ -155,26 +155,7 @@ public class cpu extends AppCompatActivity {
             return 4;
         }
 
-        @Override
-        public CharSequence getPageTitle (int position)
-        {
-            switch (position) {
-
-                case 1:
-                    return "sec0";
-
-                case 2:
-                    return "sec1";
-
-                case 3:
-                    return "sec2";
-
-                case 4:
-                    return "sec3";
 
 
-            }
-            return null;
-        }
     }
 }
