@@ -207,5 +207,7 @@
     <string name="title_activity_gpu__main__tab">GPU_Main_Tab</string>
     <string name="title_activity_memory__main__tab">Memory_Main_Tab</string>
     <string name="title_activity_ssd__main__tab">SSD_Main_Tab</string>
+    <string name="corsair_spec_03_red">Corsair SPEC-03 Red</string>
+    <string name="testtext">hint</string>
 
 </resources>

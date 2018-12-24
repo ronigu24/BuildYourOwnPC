@@ -16,7 +16,7 @@
         <!-- TODO: Update blank fragment layout -->
 
         <Button
-            android:id="@+id/addCpuButton"
+            android:id="@+id/Add_Case_Tab4"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/Text_Case_Tab4"
             android:layout_width="323dp"
             android:layout_height="56dp"
             android:layout_marginStart="46dp"
@@ -36,7 +36,7 @@
             android:layout_marginTop="52dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
-            android:text="Corsair SPEC-03 Red"
+            android:text="@string/corsair_spec_03_red"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,13 +56,13 @@
             android:layout_marginBottom="24dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/case4"
-            app:layout_constraintBottom_toTopOf="@+id/addCpuButton"
+            app:layout_constraintBottom_toTopOf="@+id/Add_Case_Tab4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/Text_Case_Tab4" />
 
         <TextView
-            android:id="@+id/price4"
+            android:id="@+id/Price_Case_Tab4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="173dp"
@@ -77,8 +77,7 @@
             app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/Text_Case_Tab4" />
 
     </android.support.constraint.ConstraintLayout>
-
 </android.support.constraint.ConstraintLayout>
