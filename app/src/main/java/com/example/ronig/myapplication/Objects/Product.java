@@ -2,17 +2,17 @@ package com.example.ronig.myapplication.Objects;
 
 public class Product {
 
-    String name;
-    int price;
+   String name;
+   String price;
 
-    Product(String name, int price){
+    public Product(String name, String price){
         this.name = name;
         this.price = price;
     }
 
-    Product(){
+    public Product(){
         this.name = "";
-        this.price = 0;
+        this.price = "";
     }
 
     public void setName(String name){
@@ -23,11 +23,11 @@ public class Product {
         return this.name;
     }
 
-    public void setPrice(int price){
+    public void setPrice(String price){
         this.price = price;
     }
 
-    public int getPrice(){
+    public String getPrice(){
         return this.price;
     }
 
