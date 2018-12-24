@@ -23,7 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".Activities.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,38 +31,38 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".purchase" />
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.LoginActivity$purchase" />
         <activity
-            android:name=".cpu"
-            android:label="@string/title_activity_cpu"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
-            android:name=".motherboard"
-            android:label="@string/title_activity_motherboard"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
-            android:name=".RegisterPage"
+            android:name=".Activities.RegisterPage"
             android:label="@string/title_activity_register_page"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Activities.LoginPage" />
         <activity
-            android:name=".memory"
-            android:label="@string/title_activity_memory"
+            android:name=".CPU.CPU_Main_Tab"
+            android:label="@string/title_activity_cpu__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ssd"
-            android:label="@string/title_activity_ssd"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".LoginPage" />
-        <activity
-            android:name=".Case"
-            android:label="@string/title_activity_case"
+            android:name=".MotherBoard.MotherBoard_Main_Tab"
+            android:label="@string/title_activity_mother_board__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".gpu"
-            android:label="@string/title_activity_gpu"
+            android:name=".Case.Case_Main_Tab"
+            android:label="@string/title_activity_case__main__tab"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".GPU.GPU_Main_Tab"
+            android:label="@string/title_activity_gpu__main__tab"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Memory.Memory_Main_Tab"
+            android:label="@string/title_activity_memory__main__tab"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".SSD.SSD_Main_Tab"
+            android:label="@string/title_activity_ssd__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 

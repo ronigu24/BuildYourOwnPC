@@ -201,5 +201,11 @@
     <string name="geforce_gtx_1070_windforce_8g">GeForce® GTX 1070 WINDFORCE 8G</string>
     <string name="_2200">2200 ₪</string>
     <string name="case_">Case</string>
+    <string name="title_activity_cpu__main__tab">CPU_Main_Tab</string>
+    <string name="title_activity_mother_board__main__tab">MotherBoard_Main_Tab</string>
+    <string name="title_activity_case__main__tab">Case_Main_Tab</string>
+    <string name="title_activity_gpu__main__tab">GPU_Main_Tab</string>
+    <string name="title_activity_memory__main__tab">Memory_Main_Tab</string>
+    <string name="title_activity_ssd__main__tab">SSD_Main_Tab</string>
 
 </resources>
