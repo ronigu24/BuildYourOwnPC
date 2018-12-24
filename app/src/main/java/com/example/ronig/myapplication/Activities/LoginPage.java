@@ -17,7 +17,7 @@ public class LoginPage extends AppCompatActivity {
     EditText inputUsername, inputPassword;
     Button loginButton, registerButton;
     DataBaseHelper db;
-    public static User currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,10 +41,10 @@ public class LoginPage extends AppCompatActivity {
                     String Password = inputPassword.getText().toString();
 
                     //Authenticate user
-                     currentUser = db.Authenticate(new User(null, Username, Password, null));
+                     MainActivity.current_user = db.Authenticate(new User(null, Username, Password, null));
 
                     //Check Authentication is successful or not
-                    if (currentUser != null) {
+                    if (MainActivity.current_user != null) {
                         Toast.makeText(getApplicationContext(), "Successfully Logged in!", Toast.LENGTH_SHORT).show();
                        // Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
 
