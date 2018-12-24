@@ -97,7 +97,7 @@ public class CPU_Main_Tab extends AppCompatActivity {
                     return tab3;
 
                 case 3:
-                    CPU_Tab_3 tab4 = new CPU_Tab_3();
+                    CPU_Tab_4 tab4 = new CPU_Tab_4();
                     return tab4;
 
                 default:
@@ -110,7 +110,7 @@ public class CPU_Main_Tab extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
     }
 }
