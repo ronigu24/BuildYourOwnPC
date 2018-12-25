@@ -36,7 +36,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
-            android:text="@string/cougar_mx350_tg"
+            android:text="Cougar, MX350, TG"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

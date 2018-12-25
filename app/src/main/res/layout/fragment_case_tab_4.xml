@@ -36,7 +36,7 @@
             android:layout_marginTop="52dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
-            android:text="@string/corsair_spec_03_red"
+            android:text="Corsair, SPEC-03, Red"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
