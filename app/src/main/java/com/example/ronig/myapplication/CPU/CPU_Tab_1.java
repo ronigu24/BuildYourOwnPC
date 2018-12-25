@@ -37,19 +37,17 @@ public class CPU_Tab_1 extends Fragment  {
             @Override
             public void onClick(View view) {
                Toast.makeText(getActivity(),"Cpu Selected",Toast.LENGTH_SHORT).show();
+
                 Intent i = new Intent(getActivity(),MainActivity.class);
                 startActivity(i);
              //   Toast.makeText(getActivity(),text.getText().toString(),Toast.LENGTH_SHORT).show();
-
-                MainActivity.user_cpu= new CPU_Object(text.getText().toString(),price.getText().toString());
+                getActivity().finish();
+                MainActivity.user_cpu = new CPU_Object(text.getText().toString(),price.getText().toString());
 
               //  Toast.makeText(getActivity(),MainActivity.user_cpu.getPrice(),Toast.LENGTH_LONG).show();
 
             }
         });
-
-
-
 
         return rootView;
     }

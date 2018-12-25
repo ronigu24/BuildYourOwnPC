@@ -39,6 +39,7 @@ public class SSD_Tab_1 extends Fragment {
                 Toast.makeText(getActivity(),"Ssd Selected",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getActivity(),MainActivity.class);
                 startActivity(i);
+                getActivity().finish();
                 MainActivity.user_ssd= new SSD_Object(text.getText().toString(),price.getText().toString());
             }
         });

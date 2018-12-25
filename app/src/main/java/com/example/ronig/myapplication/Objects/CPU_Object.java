@@ -7,6 +7,7 @@ public class CPU_Object extends Product {
         super();
     }
     public CPU_Object ()
+
     {
         super();
     }

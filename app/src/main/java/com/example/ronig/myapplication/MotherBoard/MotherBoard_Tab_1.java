@@ -38,6 +38,7 @@ public class MotherBoard_Tab_1 extends Fragment {
                 Toast.makeText(getActivity(),"MotherBoard Selected",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getActivity(),MainActivity.class);
                 startActivity(i);
+                getActivity().finish();
                 MainActivity.user_motherboard= new MotherBoard_Object(text.getText().toString(),price.getText().toString());
 
             }

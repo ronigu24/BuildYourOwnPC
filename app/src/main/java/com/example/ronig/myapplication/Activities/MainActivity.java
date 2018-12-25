@@ -25,9 +25,9 @@ import com.example.ronig.myapplication.SSD.SSD_Main_Tab;
 
 public class MainActivity extends AppCompatActivity {
 
-  private   Button buybutt;
-  private  Button cpubutt;
-  private  Button motherbutt;
+  private Button buybutt;
+  private Button cpubutt;
+  private Button motherbutt;
   private Button memorybutt;
   private Button ssdbutt;
   private Button casebutt;
@@ -41,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
   public static MotherBoard_Object user_motherboard;
   public static Case_Object user_case;
   public static Computer_Object user_pc;
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
