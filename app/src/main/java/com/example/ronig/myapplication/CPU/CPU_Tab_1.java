@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ronig.myapplication.Activities.LoginPage;
 import com.example.ronig.myapplication.Activities.MainActivity;
 import com.example.ronig.myapplication.Memory.Memory_Main_Tab;
 import com.example.ronig.myapplication.Objects.CPU_Object;
@@ -37,12 +38,12 @@ public class CPU_Tab_1 extends Fragment  {
             @Override
             public void onClick(View view) {
                Toast.makeText(getActivity(),"Cpu Selected",Toast.LENGTH_SHORT).show();
+               MainActivity.user_cpu = new CPU_Object(text.getText().toString(),price.getText().toString());
+                Toast.makeText(getActivity(), MainActivity.user_cpu.getName()+"",Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-             //   Toast.makeText(getActivity(),text.getText().toString(),Toast.LENGTH_SHORT).show();
-                getActivity().finish();
-                MainActivity.user_cpu = new CPU_Object(text.getText().toString(),price.getText().toString());
+               startActivity(i);
+               getActivity().finish();
 
               //  Toast.makeText(getActivity(),MainActivity.user_cpu.getPrice(),Toast.LENGTH_LONG).show();
 

@@ -4,10 +4,11 @@ import com.example.ronig.myapplication.Objects.Product;
 
 public class SSD_Object extends Product {
 
-    public SSD_Object (String text, String Price)
+    public SSD_Object (String name, String price)
     {
-        super();
+        super(name, price);
     }
+
     public SSD_Object ()
     {
         super();

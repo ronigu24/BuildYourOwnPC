@@ -36,7 +36,7 @@
             android:layout_marginTop="52dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
-            android:text="@string/intel_core_i3_8100_8th_genatration"
+            android:text="Intel Core i3, 8100, 8th Genaration"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

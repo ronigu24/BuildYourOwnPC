@@ -4,9 +4,9 @@ import com.example.ronig.myapplication.Objects.Product;
 
 public class GPU_Object  extends Product {
 
-    public GPU_Object (String text, String Price)
+    public GPU_Object (String name, String price)
     {
-        super();
+        super(name, price);
     }
     public GPU_Object ()
     {

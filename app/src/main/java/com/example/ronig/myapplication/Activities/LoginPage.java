@@ -14,6 +14,7 @@ import com.example.ronig.myapplication.R;
 
 public class LoginPage extends AppCompatActivity {
 
+
     EditText inputUsername, inputPassword;
     Button loginButton, registerButton;
     DataBaseHelper db;
@@ -41,7 +42,7 @@ public class LoginPage extends AppCompatActivity {
                     String Password = inputPassword.getText().toString();
 
                     //Authenticate user
-                     MainActivity.current_user = db.Authenticate(new User(null, Username, Password, null));
+                    MainActivity.current_user = db.Authenticate(new User(null, Username, Password, null));
 
                     //Check Authentication is successful or not
                     if (MainActivity.current_user != null) {

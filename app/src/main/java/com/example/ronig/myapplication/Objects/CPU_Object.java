@@ -2,9 +2,9 @@ package com.example.ronig.myapplication.Objects;
 
 public class CPU_Object extends Product {
 
-    public CPU_Object (String text, String Price)
+    public CPU_Object (String name, String price)
     {
-        super();
+        super(name, price);
     }
     public CPU_Object ()
 

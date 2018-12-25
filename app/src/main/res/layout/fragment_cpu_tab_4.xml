@@ -38,7 +38,7 @@
             android:layout_marginTop="64dp"
             android:layout_marginEnd="47dp"
             android:layout_marginRight="47dp"
-            android:text="@string/amd_ryzen_7_1800x_8_cores_3_6_ghz"
+            android:text="AMD Ryzen 7, 1800x, 8 Cores, 3.6Ghz"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

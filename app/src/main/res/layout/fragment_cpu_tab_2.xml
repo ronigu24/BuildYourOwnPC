@@ -38,7 +38,7 @@
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
             android:layout_marginBottom="2dp"
-            android:text="@string/intel_core_i5_6500_4x_3_2_ghz_boxed_1151_intel"
+            android:text="Intel Core i5, 6500 4x, 3.2Ghz"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
