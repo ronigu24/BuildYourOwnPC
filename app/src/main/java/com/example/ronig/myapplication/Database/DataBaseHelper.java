@@ -14,10 +14,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "Accounts.db";
+    private static final String DATABASE_NAME = "Database1.db";
 
     // User table name
     private static final String TABLE_USER = "user";
+    private static final String TABLE_CPU = "cpu";
 
     // User Table Columns names
     private static final String COLUMN_USER_ID = "ID";
@@ -25,13 +26,27 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_USER_PASSWORD = "Password";
     private static final String COLUMN_USER_EMAIL = "Email";
 
+    // User Table Columns names
+    private static final String COLUMN_ID = "ID";
+    private static final String COLUMN_NAME = "Name";
+    private static final String COLUMN_PRICE = "Price";
+
+
     // create table sql query
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
             + COLUMN_USER_PASSWORD + " TEXT," + COLUMN_USER_EMAIL + " TEXT" + ")";
 
+    private String CREATE_CPU_TABLE = "CREATE TABLE " + TABLE_CPU + "("
+            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME + " TEXT,"
+            + COLUMN_PRICE + " TEXT" + ")";
+
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
+
+    // drop table sql query
+    private String DROP_CPU_TABLE = "DROP TABLE IF EXISTS " + TABLE_CPU;
+    
 
     /**
      * Constructor
@@ -42,17 +57,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_USER_TABLE);
-    }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         //Drop User Table if exist
         db.execSQL(DROP_USER_TABLE);
+        db.execSQL(DROP_CPU_TABLE);
 
         // Create tables again
         onCreate(db);
@@ -115,6 +126,27 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //if user password does not matches or there is no record with that email then return @false
         cursor.close();
         return null;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+        db.execSQL(CREATE_USER_TABLE);
+        db.execSQL(CREATE_CPU_TABLE);
+
+
+    }
+
+    public void addProduct(String name, String price) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COLUMN_NAME, name);
+        values.put(COLUMN_PRICE, price);
+
+        // Inserting Row
+        db.insert(TABLE_CPU, null, values);
+        db.close();
     }
 
 

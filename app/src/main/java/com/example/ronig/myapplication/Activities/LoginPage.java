@@ -48,7 +48,7 @@ public class LoginPage extends AppCompatActivity {
                     if (MainActivity.current_user != null) {
                         Toast.makeText(getApplicationContext(), "Successfully Logged in!", Toast.LENGTH_SHORT).show();
                        // Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
-
+                        db.addProduct("Intel i7","3000");
                         //User Logged in Successfully Launch You home screen activity
                         Intent i = new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(i);
