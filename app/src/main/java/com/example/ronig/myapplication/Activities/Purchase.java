@@ -20,18 +20,20 @@ public class Purchase extends AppCompatActivity {
         TextView pay_SSD_TextView = (TextView) findViewById(R.id.paytext_ssd);
         TextView pay_Gpu_TextView = (TextView) findViewById(R.id.paytext_gpu);
         TextView pay_Case_TextView = (TextView) findViewById(R.id.paytext_case);
+        TextView Price_TextView = (TextView) findViewById(R.id.Price);
 
-        setPayText(pay_Cpu_TextView, MainActivity.user_cpu.getName(),MainActivity.user_cpu.getPrice());
-        setPayText(pay_Motherboard_TextView, MainActivity.user_motherboard.getName(),MainActivity.user_motherboard.getPrice());
-        setPayText(pay_Memory_TextView, MainActivity.user_ram.getName(),MainActivity.user_ram.getPrice());
-        setPayText(pay_SSD_TextView, MainActivity.user_ssd.getName(),MainActivity.user_ssd.getPrice());
-        setPayText(pay_Gpu_TextView, MainActivity.user_gpu.getName(),MainActivity.user_gpu.getPrice());
-        setPayText(pay_Case_TextView, MainActivity.user_case.getName(),MainActivity.user_case.getPrice() );
+        setPayText(pay_Cpu_TextView, MainActivity.user_cpu.print());
+        setPayText(pay_Motherboard_TextView, MainActivity.user_motherboard.print());
+        setPayText(pay_Memory_TextView, MainActivity.user_ram.print());
+        setPayText(pay_SSD_TextView, MainActivity.user_ssd.print());
+        setPayText(pay_Gpu_TextView, MainActivity.user_gpu.print());
+        setPayText(pay_Case_TextView, MainActivity.user_case.print() );
+        setPayText(Price_TextView, MainActivity.user_pc.printsum());
 
     }
 
-    public void setPayText(TextView textView,String name, String price){
-        textView.setText(name + " " + price);
+    public void setPayText(TextView textView,String print){
+        textView.setText(print);
     }
 
 }
