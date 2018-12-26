@@ -29,5 +29,16 @@ public class Computer_Object {
         this.case_name = case_name;
     }
 
+    public String printsum(){
+        int sum=0;
+        sum+=Integer.parseInt(case_name.price.substring(0,case_name.price.length()-2).trim());
+        sum+=Integer.parseInt(cpu_name.price.substring(0,cpu_name.price.length()-2).trim());
+        sum+=Integer.parseInt(gpu_name.price.substring(0,gpu_name.price.length()-2).trim());
+        sum+=Integer.parseInt(memory_name.price.substring(0,memory_name.price.length()-2).trim());
+        sum+=Integer.parseInt(motherboard_name.price.substring(0,motherboard_name.price.length()-2).trim());
+        sum+=Integer.parseInt(ssd_name.price.substring(0,ssd_name.price.length()-2).trim());
+        return "Price: " + sum;
+    }
+
 
 }
