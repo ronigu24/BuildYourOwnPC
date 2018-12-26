@@ -11,4 +11,5 @@ public class CPU_Object extends Product {
     {
         super();
     }
+    public String print(){return "CPU:"+" "+ name +" "+price;}
 }

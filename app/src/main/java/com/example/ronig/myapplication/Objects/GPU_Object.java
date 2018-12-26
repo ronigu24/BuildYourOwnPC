@@ -12,5 +12,5 @@ public class GPU_Object  extends Product {
     {
         super();
     }
-
+    public String print(){return "GPU:"+" "+ name +" "+price;}
 }

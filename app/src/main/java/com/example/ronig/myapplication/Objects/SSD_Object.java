@@ -13,5 +13,6 @@ public class SSD_Object extends Product {
     {
         super();
     }
+    public String print(){return "SSD:"+" "+ name +" "+price;}
 
 }

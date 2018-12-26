@@ -10,5 +10,6 @@ public class MotherBoard_Object extends Product{
     {
         super();
     }
+    public String print(){return "MotherBoard:"+" "+ name +" "+price;}
 
 }

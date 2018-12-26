@@ -11,5 +11,5 @@ public class Case_Object extends Product {
     {
         super();
     }
-
+    public String print(){return "Case:"+" "+ name +" "+price;}
 }

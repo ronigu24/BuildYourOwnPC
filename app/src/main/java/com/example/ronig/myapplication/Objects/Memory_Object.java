@@ -10,4 +10,5 @@ public class Memory_Object extends Product {
     {
         super();
     }
+    public String print(){return "RAM:"+" "+ name +" "+price;}
 }

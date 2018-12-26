@@ -212,5 +212,7 @@
     <string name="msi_r9_390_gaming_8g">MSI R9 390 Gaming, 8G</string>
     <string name="cougar_mx350_tg1">Cougar, MX350, TG</string>
     <string name="intel_core_i7_8700k_3_7ghz">Intel Core i7, 8700K, 3.7GHz</string>
+    <string name="button">Button</string>
+    <string name="buy_now">Buy Now</string>
 
 </resources>
