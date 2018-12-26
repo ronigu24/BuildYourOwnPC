@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Case.Case_Main_Tab$PlaceholderFragment">
+    tools:context=".Case.Case_Main_Tab">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/frameLayout"
@@ -34,7 +34,7 @@
             android:layout_marginStart="136dp"
             android:layout_marginLeft="136dp"
             android:layout_marginTop="92dp"
-            android:text="Cougar, MX310"
+            android:text="@string/cougar_mx310_"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
             android:layout_marginEnd="173dp"
             android:layout_marginRight="173dp"
             android:layout_marginBottom="25dp"
-            android:text="@string/_370"
+            android:text="@string/_200"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"

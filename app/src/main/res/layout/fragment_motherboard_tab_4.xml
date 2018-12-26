@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MotherBoard.MotherBoard_Main_Tab$PlaceholderFragment">
+    tools:context=".MotherBoard.MotherBoard_Main_Tab">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/frameLayout"
@@ -33,7 +33,7 @@
             android:layout_height="95dp"
             android:layout_marginStart="46dp"
             android:layout_marginLeft="46dp"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="44dp"
             android:layout_marginRight="44dp"
             android:text="@string/gigabyte_unveils_new_990fx_and_970_gaming_motherboards_amd_fx"

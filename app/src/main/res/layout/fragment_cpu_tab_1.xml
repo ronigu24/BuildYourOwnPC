@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CPU.CPU_Main_Tab$PlaceholderFragment">
+    tools:context=".CPU.CPU_Main_Tab">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/frameLayout"
@@ -21,7 +21,7 @@
             android:layout_height="88dp"
             android:layout_marginStart="46dp"
             android:layout_marginLeft="46dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="42dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
             android:text="@string/intel_core_i7_8700k_3_7ghz"

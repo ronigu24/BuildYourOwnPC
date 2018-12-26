@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MotherBoard.MotherBoard_Main_Tab$PlaceholderFragment">
+    tools:context=".MotherBoard.MotherBoard_Main_Tab">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/frameLayout"
@@ -31,8 +31,8 @@
             android:id="@+id/Text_Mother_Tab1"
             android:layout_width="323dp"
             android:layout_height="56dp"
-            android:layout_marginStart="46dp"
-            android:layout_marginLeft="46dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="44dp"
             android:layout_marginRight="44dp"

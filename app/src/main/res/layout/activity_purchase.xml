@@ -122,7 +122,7 @@
         android:layout_marginEnd="45dp"
         android:layout_marginRight="45dp"
         android:layout_marginBottom="7dp"
-        android:text="Price:"
+        android:text="@string/price_total"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/pay"
         app:layout_constraintEnd_toEndOf="parent"
