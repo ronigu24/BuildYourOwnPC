@@ -1,6 +1,7 @@
 package com.example.ronig.myapplication.GPU;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
+import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
+import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.Objects.CPU_Object;
 import com.example.ronig.myapplication.Objects.GPU_Object;
 import com.example.ronig.myapplication.R;
@@ -49,5 +52,15 @@ public class GPU_Tab_1 extends Fragment {
 
 
         return rootView;
+    }
+
+    public void Insert(){
+
+        GPU_Main_Tab.db = new DataBaseHelper(getActivity());
+        Cursor cursor = GPU_Main_Tab.db.fetch("gpu");
+        cursor.moveToFirst();
+        text.setText(cursor.getString(1));
+        price.setText(cursor.getString(2));
+
     }
 }

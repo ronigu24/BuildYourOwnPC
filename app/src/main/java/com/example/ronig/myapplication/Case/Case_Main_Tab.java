@@ -21,9 +21,12 @@ import android.widget.TextView;
 import com.example.ronig.myapplication.CPU.CPU_Tab_1;
 import com.example.ronig.myapplication.CPU.CPU_Tab_2;
 import com.example.ronig.myapplication.CPU.CPU_Tab_3;
+import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.R;
 
 public class Case_Main_Tab extends AppCompatActivity {
+
+    public static DataBaseHelper db;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide

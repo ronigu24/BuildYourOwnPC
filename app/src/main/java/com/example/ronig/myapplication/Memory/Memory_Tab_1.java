@@ -1,6 +1,7 @@
 package com.example.ronig.myapplication.Memory;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
+import com.example.ronig.myapplication.Database.DataBaseHelper;
+import com.example.ronig.myapplication.GPU.GPU_Main_Tab;
 import com.example.ronig.myapplication.Objects.Memory_Object;
 import com.example.ronig.myapplication.R;
 
@@ -50,4 +53,11 @@ public class Memory_Tab_1 extends Fragment {
         return rootView;
     }
 
+    public void Insert() {
+        Memory_Main_Tab.db = new DataBaseHelper(getActivity());
+        Cursor cursor = Memory_Main_Tab.db.fetch("ram");
+        cursor.moveToFirst();
+        text.setText(cursor.getString(1));
+        price.setText(cursor.getString(2));
+    }
 }

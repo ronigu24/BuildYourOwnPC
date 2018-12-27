@@ -1,8 +1,10 @@
 package com.example.ronig.myapplication.CPU;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +38,8 @@ public class CPU_Tab_1 extends Fragment  {
         text = (TextView) rootView.findViewById(R.id.Text_Cpu_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Cpu_Tab1);
 
+       Insert();
+
 
         Add_Cpu_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,4 +58,16 @@ public class CPU_Tab_1 extends Fragment  {
 
         return rootView;
     }
+
+    public void Insert(){
+
+        CPU_Main_Tab.db = new DataBaseHelper(getActivity());
+        Cursor cursor = CPU_Main_Tab.db.fetch("cpu");
+        cursor.moveToFirst();
+        text.setText(cursor.getString(1));
+        price.setText(cursor.getString(2));
+
+    }
+
+
 }

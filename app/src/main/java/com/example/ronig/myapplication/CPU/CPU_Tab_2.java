@@ -42,4 +42,6 @@ public class CPU_Tab_2 extends Fragment {
         });
         return rootView;
     }
+
+
 }

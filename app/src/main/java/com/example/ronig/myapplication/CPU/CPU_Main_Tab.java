@@ -1,5 +1,8 @@
 package com.example.ronig.myapplication.CPU;
 
+import android.app.Application;
+import android.content.Context;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v4.app.Fragment;
@@ -9,10 +12,19 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.R;
 
+import org.w3c.dom.Text;
+
 public class CPU_Main_Tab extends AppCompatActivity {
+
+    public static DataBaseHelper db;
+    private static Context context;
+
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -113,4 +125,6 @@ public class CPU_Main_Tab extends AppCompatActivity {
             return 4;
         }
     }
+
+
 }

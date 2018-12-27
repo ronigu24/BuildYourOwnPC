@@ -3,8 +3,12 @@ package com.example.ronig.myapplication.Database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
+import android.provider.ContactsContract;
+import android.util.Log;
 
 import com.example.ronig.myapplication.Objects.CPU_Object;
 import com.example.ronig.myapplication.Objects.Case_Object;
@@ -16,6 +20,7 @@ import com.example.ronig.myapplication.Objects.SSD_Object;
 import com.example.ronig.myapplication.Objects.User;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
+
 
     // Database Version
     private static final int DATABASE_VERSION = 1;
@@ -259,9 +264,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             addProduct(component_arr[i].getName(),component_arr[i].getPrice(),TABLE_CASE);
         }
 
-
-
     }
+
+
+    public Cursor fetch(String table_Name) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Log.i("SQLite","DataBaseHelper fetch function");
+
+        Cursor cursor = db.query(table_Name, new String[]{COLUMN_ID, COLUMN_NAME, COLUMN_PRICE}, null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
 
 
 }
