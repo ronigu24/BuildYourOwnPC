@@ -56,44 +56,54 @@ public class LoginPage extends AppCompatActivity {
                     String Username = inputUsername.getText().toString();
                     String Password = inputPassword.getText().toString();
 
-                    //Authenticate user
-                    MainActivity.current_user = db.Authenticate(new User(null, Username, Password, null));
-
-                    //Check Authentication is successful or not
-                    if (MainActivity.current_user != null) {
-                        Toast.makeText(getApplicationContext(), "Successfully Logged in!", Toast.LENGTH_SHORT).show();
-
-
-
-                        /* now store your primitive type values. In this case it is true, 1f and Hello! World  */
-                        //File f = new File("/data/data/" + getPackageName() +  "/shared_prefs/" + FILENAME + ".xml");
-                        if(!Used()) {
-
-                            Log.d("TAG", "Setup default preferences");
-                            firstUse();
-                            db.Build_DataBase();
-                        }
-                        else{
-                            Log.d("TAG", "SharedPreferences myPref : exist");
-
-                        }
-
-
-
-                       // Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
-                     //   db.addProduct("intel_core_i7_8700k_3_7ghz","1800");
-                      //  db.addProduct("Intel Core i5, 6500 4x, 3.2Ghz","930");
-
-                        //User Logged in Successfully Launch You home screen activity
-                        Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    if (Username.equals("admin")) {
+                        Intent i = new Intent(getApplicationContext(), AdminActivity.class);
                         startActivity(i);
                         finish();
                     } else {
 
-                        //User Logged in Failed
-                        Toast.makeText(getApplicationContext(), "Failed to log in , please try again", Toast.LENGTH_SHORT).show();
-                       // Snackbar.make(buttonLogin, "Failed to log in , please try again", Snackbar.LENGTH_LONG).show();
+                        //Authenticate user
+                        MainActivity.current_user = db.Authenticate(new User(null, Username, Password, null));
 
+
+                        //Check Authentication is successful or not
+                        if (MainActivity.current_user != null) {
+
+
+                            Toast.makeText(getApplicationContext(), "Successfully Logged in!", Toast.LENGTH_SHORT).show();
+
+
+
+                            /* now store your primitive type values. In this case it is true, 1f and Hello! World  */
+                            //File f = new File("/data/data/" + getPackageName() +  "/shared_prefs/" + FILENAME + ".xml");
+                            if (!Used()) {
+
+                                Log.d("TAG", "Setup default preferences");
+                                firstUse();
+                                db.Build_DataBase();
+                            } else {
+                                Log.d("TAG", "SharedPreferences myPref : exist");
+
+                            }
+
+
+                            // Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
+                            //   db.addProduct("intel_core_i7_8700k_3_7ghz","1800");
+                            //  db.addProduct("Intel Core i5, 6500 4x, 3.2Ghz","930");
+
+                            //User Logged in Successfully Launch You home screen activity
+
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(i);
+                            finish();
+
+                        } else {
+
+                            //User Logged in Failed
+                            Toast.makeText(getApplicationContext(), "Failed to log in , please try again", Toast.LENGTH_SHORT).show();
+                            // Snackbar.make(buttonLogin, "Failed to log in , please try again", Snackbar.LENGTH_LONG).show();
+
+                        }
                     }
                 }
             }

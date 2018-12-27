@@ -61,6 +61,7 @@
             android:name=".SSD.SSD_Main_Tab"
             android:label="@string/title_activity_ssd__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Activities.AdminActivity"></activity>
     </application>
 
 </manifest>
