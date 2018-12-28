@@ -30,7 +30,7 @@ public class Memory_Tab_3 extends Fragment {
 
         Add_Ram_Tab_3_Button = (Button) rootView.findViewById(R.id.Add_Ram_Tab3);
         text = (TextView) rootView.findViewById(R.id.Text_Ram_Tab3);
-        price =(TextView) rootView.findViewById(R.id.Price_Ram_Tab1);
+        price =(TextView) rootView.findViewById(R.id.Price_Ram_Tab3);
 
         Memory_Main_Tab.Insert(getActivity(), 3, text, price);
 

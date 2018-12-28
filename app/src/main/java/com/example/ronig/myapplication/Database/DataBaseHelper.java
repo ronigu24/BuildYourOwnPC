@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.provider.ContactsContract;
 import android.util.Log;
 
+import com.example.ronig.myapplication.Activities.MainActivity;
 import com.example.ronig.myapplication.Objects.CPU_Object;
 import com.example.ronig.myapplication.Objects.Case_Object;
 import com.example.ronig.myapplication.Objects.GPU_Object;
@@ -39,6 +40,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_MOTHERBOARD = "motherboard";
     private static final String TABLE_SSD = "SSD";
     private static final String TABLE_CASE = "case_";
+    private static final String TABLE_ORDERS = "orders";
+
 
     // User Table Columns names
     private static final String COLUMN_USER_ID = "ID";
@@ -51,6 +54,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_NAME = "Name";
     private static final String COLUMN_PRICE = "Price";
 
+
+    //  Product Table Columns names
+
+    private static final String COLUMN_STATUS = "Status";
+    private static final String COLUMN_TOTAL_PRICE = "TotalPrice";
+    private static final String COLUMN_USER_ORDER = "UserOrder";
 
 
 
@@ -78,6 +87,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private String CREATE_CASE_TABLE = "CREATE TABLE " + TABLE_CASE + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME + " TEXT,"
             + COLUMN_PRICE + " TEXT" + ")";
+    private String CREATE_ORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS + "("
+            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_ORDER + " TEXT,"
+            + COLUMN_TOTAL_PRICE + " TEXT, " + COLUMN_STATUS + " TEXT" + ")";
 
 
 
@@ -91,7 +103,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private String DROP_SSD_TABLE = "DROP TABLE IF EXISTS " + TABLE_SSD;
     private String DROP_GPU_TABLE = "DROP TABLE IF EXISTS " + TABLE_GPU;
     private String DROP_CASE_TABLE = "DROP TABLE IF EXISTS " + TABLE_CASE;
-    
+    private String DROP_ORDERS_TABLE = "DROP TABLE IF EXISTS " + TABLE_ORDERS;
+
 
     /**
      * Constructor
@@ -114,6 +127,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL(DROP_SSD_TABLE);
         db.execSQL(DROP_GPU_TABLE);
         db.execSQL(DROP_CASE_TABLE);
+        db.execSQL(DROP_ORDERS_TABLE);
 
         // Create tables again
         onCreate(db);
@@ -188,6 +202,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_SSD_TABLE);
         db.execSQL(CREATE_GPU_TABLE);
         db.execSQL(CREATE_CASE_TABLE);
+        db.execSQL(CREATE_ORDERS_TABLE);
 
 
     }
@@ -203,6 +218,26 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.insert(Table_name, null, values);
 
         db.close();
+    }
+
+
+
+
+    public void addOrder()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COLUMN_ID, MainActivity.current_user.getId());
+        values.put(COLUMN_USER_ORDER, MainActivity.current_user.getName());
+        values.put(COLUMN_TOTAL_PRICE, "fdsaf");
+        values.put(COLUMN_STATUS, "Order pending approval");
+
+        // Inserting Row
+        db.insert(TABLE_ORDERS, null, values);
+
+        db.close();
+
     }
 
     public void Build_DataBase ()
@@ -281,14 +316,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //Cursor cursor = db.query(table_Name, new String[]{COLUMN_NAME, COLUMN_PRICE}, COLUMN_ID, null, null, null, null);
         Cursor cursor = db.rawQuery("select * from "+table_Name,null);
 
+String name, price;
+
 
         if(cursor.moveToFirst()) {
 
-            while (!cursor.isAfterLast()) {
+             name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+            array.add(name);
+             price = cursor.getString(cursor.getColumnIndex(COLUMN_PRICE));
+            array.add(price);
 
-                String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
-                String price = cursor.getString(cursor.getColumnIndex(COLUMN_PRICE));
+            while (cursor.moveToNext()) {
+
+                 name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
                 array.add(name);
+                 price = cursor.getString(cursor.getColumnIndex(COLUMN_PRICE));
                 array.add(price);
 
                 cursor.moveToNext();
@@ -297,6 +339,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         /*if (cursor != null) {
             cursor.moveToFirst();
         }*/
+        cursor.close();
+        db.close();
         return array;
     }
 }
