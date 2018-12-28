@@ -32,6 +32,8 @@ public class Case_Tab_1 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Case_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Case_Tab1);
 
+        Case_Main_Tab.Insert(getActivity(), 1, text, price);
+
 
         Add_Case_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +49,5 @@ public class Case_Tab_1 extends Fragment {
         return rootView;
     }
 
-    public void Insert(){
 
-        Case_Main_Tab.db = new DataBaseHelper(getActivity());
-        Cursor cursor = Case_Main_Tab.db.fetch("case_");
-        cursor.moveToFirst();
-        text.setText(cursor.getString(1));
-        price.setText(cursor.getString(2));
-
-    }
 }

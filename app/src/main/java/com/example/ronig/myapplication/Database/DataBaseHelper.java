@@ -19,6 +19,9 @@ import com.example.ronig.myapplication.Objects.Product;
 import com.example.ronig.myapplication.Objects.SSD_Object;
 import com.example.ronig.myapplication.Objects.User;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class DataBaseHelper extends SQLiteOpenHelper {
 
 
@@ -47,6 +50,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_ID = "ID";
     private static final String COLUMN_NAME = "Name";
     private static final String COLUMN_PRICE = "Price";
+
+
 
 
     // create table sql query
@@ -204,10 +209,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     {
 
        Product component_arr[]= new Product[4];
-        component_arr[0]=new CPU_Object("intel_core_i7_8700k_3_7ghz", "1800 ₪");
-        component_arr[1]=new CPU_Object("Intel Core i5, 6500 4x, 3.2Ghz", "930 ₪");
-        component_arr[2]=new CPU_Object("intel_core_i3_8100_8th_genaration", "670 ₪");
-        component_arr[3]=new CPU_Object("amd_ryzen_7_1800x_8_cores_3_6ghz", "1120 ₪");
+        component_arr[0]=new CPU_Object("intel_core_i7_8700k_3_7ghz!", "1800 ₪");
+        component_arr[1]=new CPU_Object("Intel Core i5, 6500 4x, 3.2Ghz!", "930 ₪");
+        component_arr[2]=new CPU_Object("intel_core_i3_8100_8th_genaration!", "670 ₪");
+        component_arr[3]=new CPU_Object("amd_ryzen_7_1800x_8_cores_3_6ghz!", "1120 ₪");
 
         for(int i=0; i<component_arr.length; i++)
         {
@@ -267,18 +272,31 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Cursor fetch(String table_Name) {
+    public ArrayList<String> fetch(String table_Name) {
+        ArrayList<String> array = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
         Log.i("SQLite","DataBaseHelper fetch function");
 
-        Cursor cursor = db.query(table_Name, new String[]{COLUMN_ID, COLUMN_NAME, COLUMN_PRICE}, null, null, null, null, null);
-        if (cursor != null) {
-            cursor.moveToFirst();
+        //Cursor cursor = db.query(table_Name, new String[]{COLUMN_NAME, COLUMN_PRICE}, COLUMN_ID, null, null, null, null);
+        Cursor cursor = db.rawQuery("select * from "+table_Name,null);
+
+
+        if(cursor.moveToFirst()) {
+
+            while (!cursor.isAfterLast()) {
+
+                String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+                String price = cursor.getString(cursor.getColumnIndex(COLUMN_PRICE));
+                array.add(name);
+                array.add(price);
+
+                cursor.moveToNext();
+            }
         }
-        return cursor;
+        /*if (cursor != null) {
+            cursor.moveToFirst();
+        }*/
+        return array;
     }
-
-
-
 }

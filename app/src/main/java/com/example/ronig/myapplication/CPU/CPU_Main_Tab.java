@@ -19,6 +19,8 @@ import com.example.ronig.myapplication.R;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class CPU_Main_Tab extends AppCompatActivity {
 
     public static DataBaseHelper db;
@@ -126,5 +128,14 @@ public class CPU_Main_Tab extends AppCompatActivity {
         }
     }
 
+    public static void Insert(Context context, int tab, TextView text, TextView price){
+
+        CPU_Main_Tab.db = new DataBaseHelper(context);
+        ArrayList<String> array = CPU_Main_Tab.db.fetch("cpu");
+
+        text.setText(array.get(tab*2-2));
+        price.setText(array.get(tab*2-1));
+
+    }
 
 }

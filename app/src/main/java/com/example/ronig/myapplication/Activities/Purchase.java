@@ -2,6 +2,7 @@ package com.example.ronig.myapplication.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ public class Purchase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
 
+        Button pay_Btn = (Button) findViewById(R.id.pay);
         TextView pay_Cpu_TextView = (TextView) findViewById(R.id.paytext_cpu);
         TextView pay_Motherboard_TextView = (TextView) findViewById(R.id.paytext_motherboard);
         TextView pay_Memory_TextView = (TextView) findViewById(R.id.paytext_memory);
@@ -29,6 +31,8 @@ public class Purchase extends AppCompatActivity {
         setPayText(pay_Gpu_TextView, MainActivity.user_gpu.print());
         setPayText(pay_Case_TextView, MainActivity.user_case.print() );
         setPayText(Price_TextView, MainActivity.user_pc.printsum());
+
+
 
     }
 

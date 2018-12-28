@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 else if(user_case==null)
                 { Toast.makeText(getApplication(),"Case is missing",Toast.LENGTH_SHORT).show(); }
                 else {
-                    Toast.makeText(getApplicationContext(), user_cpu.getName()+"",Toast.LENGTH_SHORT).show();
+
                     user_pc = new Computer_Object(user_cpu, user_motherboard, user_ram, user_ssd, user_gpu, user_case);
                     current_user.build_pc(user_pc);
 

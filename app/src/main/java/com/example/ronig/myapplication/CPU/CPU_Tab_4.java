@@ -30,6 +30,8 @@ public class CPU_Tab_4 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Cpu_Tab4);
         price =(TextView) rootView.findViewById(R.id.Price_Cpu_Tab4);
 
+        CPU_Main_Tab.Insert(getActivity(), 4, text, price);
+
 
         Add_Cpu_Tab_4_Button.setOnClickListener(new View.OnClickListener() {
             @Override

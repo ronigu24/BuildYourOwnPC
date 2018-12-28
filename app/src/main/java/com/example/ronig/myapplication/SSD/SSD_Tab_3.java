@@ -32,6 +32,8 @@ public class SSD_Tab_3 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Ssd_Tab3);
         price =(TextView) rootView.findViewById(R.id.Price_Ssd_Tab3);
 
+        SSD_Main_Tab.Insert(getActivity(), 3, text, price);
+
 
         Add_Ssd_Tab_3_Button.setOnClickListener(new View.OnClickListener() {
             @Override

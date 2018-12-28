@@ -3,6 +3,7 @@ package com.example.ronig.myapplication.Activities;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,25 +19,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private static final String TAG = "RecyclerViewAdapter";
 
     private ArrayList<String> usersOrders = new ArrayList<>();
-    private Context mContext;
+    private LayoutInflater mInflater;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<String> usersOrders) {
-        this.usersOrders = usersOrders;
-        this.mContext = mContext;
+    public RecyclerViewAdapter(Context context, ArrayList<String> usersOrders1) {
+
+        usersOrders = usersOrders1;
+        this.mInflater = LayoutInflater.from(context);
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_orders, parent, false);
+        View view = mInflater.from(parent.getContext()).inflate(R.layout.layout_orders, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        Log.d(TAG, "onBindViewHolder: called.");
 
-        holder.userName.setText(usersOrders.get(position));
+        holder.userOrder.setText(usersOrders.get(position));
 
     }
 
@@ -47,13 +50,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView userName;
+        TextView userOrder;
         RelativeLayout parentLayout;
 
         public ViewHolder(View itemView){
             super(itemView);
-            userName = itemView.findViewById(R.id.userOrder);
-
+            userOrder = itemView.findViewById(R.id.userOrder);
+            parentLayout = itemView.findViewById(R.id.parent_layout);
 
         }
 

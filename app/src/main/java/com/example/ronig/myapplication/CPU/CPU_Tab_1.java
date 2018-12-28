@@ -1,5 +1,6 @@
 package com.example.ronig.myapplication.CPU;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
@@ -22,6 +23,8 @@ import com.example.ronig.myapplication.Objects.Case_Object;
 import com.example.ronig.myapplication.Objects.Product;
 import com.example.ronig.myapplication.R;
 
+import java.util.ArrayList;
+
 public class CPU_Tab_1 extends Fragment  {
 
     Button Add_Cpu_Tab_1_Button;
@@ -38,7 +41,7 @@ public class CPU_Tab_1 extends Fragment  {
         text = (TextView) rootView.findViewById(R.id.Text_Cpu_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Cpu_Tab1);
 
-       Insert();
+       CPU_Main_Tab.Insert(getActivity(), 1, text, price);
 
 
         Add_Cpu_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
@@ -59,15 +62,6 @@ public class CPU_Tab_1 extends Fragment  {
         return rootView;
     }
 
-    public void Insert(){
-
-        CPU_Main_Tab.db = new DataBaseHelper(getActivity());
-        Cursor cursor = CPU_Main_Tab.db.fetch("cpu");
-        cursor.moveToFirst();
-        text.setText(cursor.getString(1));
-        price.setText(cursor.getString(2));
-
-    }
 
 
 }

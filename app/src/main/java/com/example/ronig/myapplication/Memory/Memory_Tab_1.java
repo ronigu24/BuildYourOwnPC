@@ -16,6 +16,7 @@ import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.GPU.GPU_Main_Tab;
 import com.example.ronig.myapplication.Objects.Memory_Object;
 import com.example.ronig.myapplication.R;
+import com.example.ronig.myapplication.SSD.SSD_Main_Tab;
 
 public class Memory_Tab_1 extends Fragment {
 
@@ -35,6 +36,7 @@ public class Memory_Tab_1 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Ram_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Ram_Tab1);
 
+        Memory_Main_Tab.Insert(getActivity(), 1, text, price);
 
         Add_Ram_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,11 +55,5 @@ public class Memory_Tab_1 extends Fragment {
         return rootView;
     }
 
-    public void Insert() {
-        Memory_Main_Tab.db = new DataBaseHelper(getActivity());
-        Cursor cursor = Memory_Main_Tab.db.fetch("ram");
-        cursor.moveToFirst();
-        text.setText(cursor.getString(1));
-        price.setText(cursor.getString(2));
-    }
+
 }

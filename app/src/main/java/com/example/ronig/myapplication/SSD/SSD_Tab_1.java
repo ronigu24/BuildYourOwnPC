@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
 import com.example.ronig.myapplication.Database.DataBaseHelper;
+import com.example.ronig.myapplication.GPU.GPU_Main_Tab;
 import com.example.ronig.myapplication.MotherBoard.MotherBoard_Main_Tab;
 import com.example.ronig.myapplication.Objects.SSD_Object;
 import com.example.ronig.myapplication.R;
@@ -35,6 +36,7 @@ public class SSD_Tab_1 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Ssd_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Ssd_Tab1);
 
+        SSD_Main_Tab.Insert(getActivity(), 1, text, price);
 
         Add_Ssd_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +52,5 @@ public class SSD_Tab_1 extends Fragment {
         return rootView;
     }
 
-    public void Insert() {
-        SSD_Main_Tab.db = new DataBaseHelper(getActivity());
-        Cursor cursor = SSD_Main_Tab.db.fetch("SSD");
-        cursor.moveToFirst();
-        text.setText(cursor.getString(1));
-        price.setText(cursor.getString(2));
-    }
+
 }

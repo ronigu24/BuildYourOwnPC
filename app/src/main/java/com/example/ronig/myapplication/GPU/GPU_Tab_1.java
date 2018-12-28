@@ -36,6 +36,7 @@ public class GPU_Tab_1 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Gpu_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Gpu_Tab1);
 
+        GPU_Main_Tab.Insert(getActivity(), 1, text, price);
 
         Add_Gpu_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,13 +55,6 @@ public class GPU_Tab_1 extends Fragment {
         return rootView;
     }
 
-    public void Insert(){
 
-        GPU_Main_Tab.db = new DataBaseHelper(getActivity());
-        Cursor cursor = GPU_Main_Tab.db.fetch("gpu");
-        cursor.moveToFirst();
-        text.setText(cursor.getString(1));
-        price.setText(cursor.getString(2));
 
-    }
 }

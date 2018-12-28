@@ -1,5 +1,6 @@
 package com.example.ronig.myapplication.MotherBoard;
 
+import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,11 +19,14 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
 import com.example.ronig.myapplication.CPU.CPU_Tab_1;
 import com.example.ronig.myapplication.CPU.CPU_Tab_2;
 import com.example.ronig.myapplication.CPU.CPU_Tab_3;
 import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.R;
+
+import java.util.ArrayList;
 
 public class MotherBoard_Main_Tab extends AppCompatActivity {
 
@@ -124,5 +128,15 @@ public class MotherBoard_Main_Tab extends AppCompatActivity {
             // Show 3 total pages.
             return 4;
         }
+    }
+
+    public static void Insert(Context context, int tab, TextView text, TextView price){
+
+        CPU_Main_Tab.db = new DataBaseHelper(context);
+        ArrayList<String> array = CPU_Main_Tab.db.fetch("motherboard");
+
+        text.setText(array.get(tab*2-2));
+        price.setText(array.get(tab*2-1));
+
     }
 }

@@ -11,8 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
+import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.Objects.CPU_Object;
 import com.example.ronig.myapplication.R;
+
+import java.util.ArrayList;
 
 public class CPU_Tab_2 extends Fragment {
 
@@ -30,6 +33,8 @@ public class CPU_Tab_2 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Cpu_Tab2);
         price =(TextView) rootView.findViewById(R.id.Price_Cpu_Tab2);
 
+        CPU_Main_Tab.Insert(getActivity(), 2, text, price);
+
 
         Add_Cpu_Tab_2_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +47,5 @@ public class CPU_Tab_2 extends Fragment {
         });
         return rootView;
     }
-
 
 }

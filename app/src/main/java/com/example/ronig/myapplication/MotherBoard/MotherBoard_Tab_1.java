@@ -34,6 +34,7 @@ public class MotherBoard_Tab_1 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Mother_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Mother_Tab1);
 
+        MotherBoard_Main_Tab.Insert(getActivity(), 1, text, price);
 
         Add_Mother_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,11 +53,5 @@ public class MotherBoard_Tab_1 extends Fragment {
         return rootView;
     }
 
-    public void Insert() {
-        MotherBoard_Main_Tab.db = new DataBaseHelper(getActivity());
-        Cursor cursor = MotherBoard_Main_Tab.db.fetch("motherboard");
-        cursor.moveToFirst();
-        text.setText(cursor.getString(1));
-        price.setText(cursor.getString(2));
-    }
+
 }
