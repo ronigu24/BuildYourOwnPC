@@ -30,7 +30,7 @@ public class Case_Tab_4 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Case_Tab4);
         price =(TextView) rootView.findViewById(R.id.Price_Case_Tab4);
 
-        Case_Main_Tab.Insert(getActivity(), 4, text, price);
+        Case_Main_Tab.Insert(text, price, 4);
 
         Add_Case_Tab_4_Button.setOnClickListener(new View.OnClickListener() {
             @Override

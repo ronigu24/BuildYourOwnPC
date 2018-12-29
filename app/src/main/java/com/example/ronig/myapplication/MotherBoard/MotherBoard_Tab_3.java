@@ -32,7 +32,7 @@ public class MotherBoard_Tab_3 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Mother_Tab3);
         price =(TextView) rootView.findViewById(R.id.Price_Mother_Tab3);
 
-        MotherBoard_Main_Tab.Insert(getActivity(), 3, text, price);
+        MotherBoard_Main_Tab.Insert(text, price, 3);
 
         Add_Mother_Tab_3_Button.setOnClickListener(new View.OnClickListener() {
             @Override

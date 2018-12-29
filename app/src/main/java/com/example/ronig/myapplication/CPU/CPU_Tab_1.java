@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,13 +36,17 @@ public class CPU_Tab_1 extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         final View rootView = inflater.inflate(R.layout.fragment_cpu_tab_1, container, false);
 
         Add_Cpu_Tab_1_Button = (Button) rootView.findViewById(R.id.Add_Cpu_Tab1);
         text = (TextView) rootView.findViewById(R.id.Text_Cpu_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Cpu_Tab1);
 
-       CPU_Main_Tab.Insert(getActivity(), 1, text, price);
+       CPU_Main_Tab.Insert(text, price, 1);
+
+        //text.setText(CPU_Main_Tab.array.get(0));
+        //price.setText(CPU_Main_Tab.array.get(1));
 
 
         Add_Cpu_Tab_1_Button.setOnClickListener(new View.OnClickListener() {

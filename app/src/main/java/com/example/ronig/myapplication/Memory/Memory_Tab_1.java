@@ -36,7 +36,7 @@ public class Memory_Tab_1 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Ram_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Ram_Tab1);
 
-        Memory_Main_Tab.Insert(getActivity(), 1, text, price);
+        Memory_Main_Tab.Insert(text, price, 1);
 
         Add_Ram_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
