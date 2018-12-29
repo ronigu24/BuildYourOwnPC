@@ -1,5 +1,7 @@
 package com.example.ronig.myapplication.Activities;
 
+
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -43,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
   public static MotherBoard_Object user_motherboard;
   public static Case_Object user_case;
 
-
   public static Computer_Object user_pc;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent i = new Intent(getApplicationContext(), Purchase.class);
                     startActivity(i);
+                    finish();
                 }
             }
 
@@ -105,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),CPU_Main_Tab.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -114,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),MotherBoard_Main_Tab.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -123,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),Memory_Main_Tab.class);
                 startActivity(i);
+                finish();
             }
 
 
@@ -135,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),SSD_Main_Tab.class);
                 startActivity(i);
+                finish();
             }
         });
         casebutt =(Button)findViewById(R.id.case1);
@@ -143,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),Case_Main_Tab.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -152,13 +160,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),GPU_Main_Tab.class);
                 startActivity(i);
+                finish();
             }
         });
 
 
-
     }
-
-
-        }
+}
 

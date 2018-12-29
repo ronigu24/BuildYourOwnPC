@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <supports-screens>
         android:resizeable="true"
@@ -33,10 +34,10 @@
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.Purchase" />
         <activity
-            android:name=".Activities.RegisterPage"
+            android:name=".Activities.RegisterActivity"
             android:label="@string/title_activity_register_page"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Activities.LoginPage" />
+        <activity android:name=".Activities.LoginActivity" />
         <activity
             android:name=".CPU.CPU_Main_Tab"
             android:label="@string/title_activity_cpu__main__tab"
@@ -62,7 +63,8 @@
             android:label="@string/title_activity_ssd__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Activities.AdminActivity" />
-        <activity android:name=".Activities.MyOrders"></activity>
+        <activity android:name=".Activities.MyOrders" />
+
     </application>
 
 </manifest>

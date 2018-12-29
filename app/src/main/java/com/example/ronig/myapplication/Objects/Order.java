@@ -2,20 +2,15 @@ package com.example.ronig.myapplication.Objects;
 
 public class Order {
 
-    int Id;
     String userName;
     String price;
     String status;
 
-    public Order(int id, String userName, String price, String status) {
-        Id = id;
+    public Order(String userName, String price, String status) {
+
         this.userName = userName;
         this.price = price;
         this.status = status;
-    }
-
-    public void setId(int id) {
-        Id = id;
     }
 
     public void setUserName(String userName) {
@@ -31,7 +26,7 @@ public class Order {
 
     }
     public void approved(){
-            this.status ="approved";
+            this.status ="Approved";
     }
 
     public void canceled(){
@@ -39,10 +34,6 @@ public class Order {
     }
 
 
-    public int getId() {
-
-        return Id;
-    }
 
     public String getUserName() {
         return userName;
@@ -54,5 +45,10 @@ public class Order {
 
     public String getStatus() {
         return status;
+    }
+
+    @Override
+    public String toString() {
+        return userName+" "+price+" "+status;
     }
 }

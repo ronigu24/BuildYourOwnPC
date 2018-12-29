@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.example.ronig.myapplication.Activities.RecyclerViewAdapter;
 import com.example.ronig.myapplication.Database.DataBaseHelper;
+import com.example.ronig.myapplication.Objects.Order;
 import com.example.ronig.myapplication.R;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class MyOrders extends AppCompatActivity {
 
     private static final String TAG = "MyOrders";
 
-    private ArrayList<String> names = new ArrayList<>();
+    private ArrayList<Order> names = new ArrayList<>();
 
     DataBaseHelper db;
 

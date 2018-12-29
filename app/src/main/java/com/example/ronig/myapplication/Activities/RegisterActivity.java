@@ -12,7 +12,7 @@ import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.Objects.User;
 import com.example.ronig.myapplication.R;
 
-public class RegisterPage extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     DataBaseHelper db;
     EditText editTextUserName;
@@ -45,9 +45,10 @@ public class RegisterPage extends AppCompatActivity {
                         //Snackbar.make(registerButton, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
                         Toast.makeText(getApplicationContext(), "User created successfully! Please Login", Toast.LENGTH_SHORT).show();
 
-                        finish();
-                        Intent i = new Intent(getApplicationContext(),LoginPage.class);
+                        Intent i = new Intent(getApplicationContext(),LoginActivity.class);
                         startActivity(i);
+                        finish();
+
                     } else {
 
                         //Email exists with email input provided so show error user already exist

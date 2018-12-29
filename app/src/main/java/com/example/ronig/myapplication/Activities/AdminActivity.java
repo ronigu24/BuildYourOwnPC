@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.example.ronig.myapplication.Database.DataBaseHelper;
+import com.example.ronig.myapplication.Objects.Order;
 import com.example.ronig.myapplication.R;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class AdminActivity extends AppCompatActivity {
 
     private static final String TAG = "AdminActivity";
 
-    private ArrayList<String> names = new ArrayList<>();
+    private ArrayList<Order> names = new ArrayList<>();
     DataBaseHelper db;
 
     @Override
@@ -26,21 +27,14 @@ public class AdminActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         db = new DataBaseHelper(this);
-        names = db.myOrder();
 
         initRecyclerView();
 
-
     }
 
+    public void initRecyclerView(){
 
-    public void refresh() {
-
-        finish();
-        startActivity(getIntent());
-    }
-
-    private void initRecyclerView(){
+        names = db.myOrder();
         Log.i(TAG, "initRecyclerView: Init Recyclerview.");
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         //recyclerView.setHasFixedSize(true);

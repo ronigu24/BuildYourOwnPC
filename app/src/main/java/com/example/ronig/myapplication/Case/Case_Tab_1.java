@@ -42,6 +42,7 @@ public class Case_Tab_1 extends Fragment {
                 Intent i = new Intent(getActivity(),MainActivity.class);
                 startActivity(i);
                 MainActivity.user_case= new Case_Object(text.getText().toString(),price.getText().toString());
+                getActivity().onBackPressed();
             }
         });
 

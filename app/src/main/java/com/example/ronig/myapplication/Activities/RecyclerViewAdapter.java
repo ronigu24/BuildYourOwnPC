@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Database.DataBaseHelper;
+import com.example.ronig.myapplication.Objects.Order;
 import com.example.ronig.myapplication.R;
 
 import java.util.ArrayList;
@@ -24,11 +26,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     DataBaseHelper db;
 
-    private ArrayList<String> usersOrders = new ArrayList<>();
+    private ArrayList<Order> usersOrders = new ArrayList<>();
     private LayoutInflater mInflater;
     private Context mContext;
 
-    public RecyclerViewAdapter(Context context, ArrayList<String> usersOrders1) {
+    public RecyclerViewAdapter(Context context, ArrayList<Order> usersOrders1) {
 
         mContext = context;
         usersOrders = usersOrders1;
@@ -42,6 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
+
 static int stage=0;
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
@@ -49,7 +52,7 @@ static int stage=0;
 
         db = new DataBaseHelper(mContext);
 
-        holder.userOrder.setText(usersOrders.get(position));
+        holder.userOrder.setText(usersOrders.get(position).toString());
 
         if (MainActivity.current_user.getName().equals("admin")) {
             holder.parentLayout.setOnClickListener(new View.OnClickListener() {
@@ -61,22 +64,22 @@ static int stage=0;
                             Toast.makeText(mContext, "Approved", Toast.LENGTH_SHORT).show();
                             stage++;
                             db.changeStatus("Approved", position + 1);
+                            usersOrders.get(position).approved();
+                            holder.userOrder.setText(usersOrders.get(position).toString());
+
+
                             break;
                         case (1):
                             Toast.makeText(mContext, "Canceled", Toast.LENGTH_SHORT).show();
                             stage--;
                             db.changeStatus("Canceled", position + 1);
+                            usersOrders.get(position).canceled();
+                            holder.userOrder.setText(usersOrders.get(position).toString());
 
                             break;
                     }
-
-
-
-
                 }
             });
-
-
         }
     }
 

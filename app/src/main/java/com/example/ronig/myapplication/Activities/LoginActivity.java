@@ -3,25 +3,21 @@ package com.example.ronig.myapplication.Activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.Objects.User;
 import com.example.ronig.myapplication.R;
 
-import java.io.File;
+public class LoginActivity extends AppCompatActivity {
 
-public class LoginPage extends AppCompatActivity {
-
+    public static final int NOTIFICATION_ID = 1;
 
     EditText inputUsername, inputPassword;
     Button loginButton, registerButton;
@@ -91,12 +87,7 @@ public class LoginPage extends AppCompatActivity {
                             }
                             db.Build_DataBase();
 
-                            // Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
-                            //   db.addProduct("intel_core_i7_8700k_3_7ghz","1800");
-                            //  db.addProduct("Intel Core i5, 6500 4x, 3.2Ghz","930");
-
                             //User Logged in Successfully Launch You home screen activity
-
                             Intent i = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(i);
                             finish();
@@ -105,7 +96,6 @@ public class LoginPage extends AppCompatActivity {
 
                             //User Logged in Failed
                             Toast.makeText(getApplicationContext(), "Failed to log in , please try again", Toast.LENGTH_SHORT).show();
-                            // Snackbar.make(buttonLogin, "Failed to log in , please try again", Snackbar.LENGTH_LONG).show();
 
                         }
                     }
@@ -117,7 +107,7 @@ public class LoginPage extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),RegisterPage.class);
+                Intent i = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(i);
             }
         });

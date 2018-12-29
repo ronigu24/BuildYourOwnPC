@@ -16,6 +16,7 @@ import com.example.ronig.myapplication.Objects.Case_Object;
 import com.example.ronig.myapplication.Objects.GPU_Object;
 import com.example.ronig.myapplication.Objects.Memory_Object;
 import com.example.ronig.myapplication.Objects.MotherBoard_Object;
+import com.example.ronig.myapplication.Objects.Order;
 import com.example.ronig.myapplication.Objects.Product;
 import com.example.ronig.myapplication.Objects.SSD_Object;
 import com.example.ronig.myapplication.Objects.User;
@@ -233,11 +234,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<String> myOrder() {
+    public ArrayList<Order> myOrder() {
 
-
-
-        ArrayList<String> array = new ArrayList<>();
+        ArrayList<Order> array = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor;
         Log.i("SQLite", "DataBaseHelper myOrder function");
@@ -257,7 +256,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             name = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ORDER));
             price = cursor.getString(cursor.getColumnIndex(COLUMN_TOTAL_PRICE));
             status = cursor.getString(cursor.getColumnIndex(COLUMN_STATUS));
-            array.add(name + " " + price + " " + status);
+            array.add(new Order(name,price,status));
 
             while (cursor.moveToNext()) {
 
@@ -265,7 +264,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 price = cursor.getString(cursor.getColumnIndex(COLUMN_TOTAL_PRICE));
                 status = cursor.getString(cursor.getColumnIndex(COLUMN_STATUS));
 
-                array.add(name + " " + price + " " + status);
+                array.add(new Order(name,price,status));
 
             }
 

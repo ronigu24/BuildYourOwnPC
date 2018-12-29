@@ -55,6 +55,7 @@ public class Purchase extends AppCompatActivity {
 
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 

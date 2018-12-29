@@ -1,12 +1,7 @@
 package com.example.ronig.myapplication.CPU;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,16 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ronig.myapplication.Activities.LoginPage;
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.Database.DataBaseHelper;
-import com.example.ronig.myapplication.Memory.Memory_Main_Tab;
 import com.example.ronig.myapplication.Objects.CPU_Object;
-import com.example.ronig.myapplication.Objects.Case_Object;
-import com.example.ronig.myapplication.Objects.Product;
 import com.example.ronig.myapplication.R;
-
-import java.util.ArrayList;
 
 public class CPU_Tab_1 extends Fragment  {
 
