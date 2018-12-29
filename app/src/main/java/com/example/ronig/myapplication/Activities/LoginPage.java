@@ -57,6 +57,8 @@ public class LoginPage extends AppCompatActivity {
                     String Password = inputPassword.getText().toString();
 
                     if (Username.equals("admin")) {
+
+                        MainActivity.current_user = new User(null, Username, Password, null);
                         Intent i = new Intent(getApplicationContext(), AdminActivity.class);
                         startActivity(i);
                         finish();

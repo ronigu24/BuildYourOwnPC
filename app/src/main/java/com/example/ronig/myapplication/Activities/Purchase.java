@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
 import com.example.ronig.myapplication.Database.DataBaseHelper;
+import com.example.ronig.myapplication.Objects.Order;
 import com.example.ronig.myapplication.R;
 
 public class Purchase extends AppCompatActivity {
@@ -50,6 +51,7 @@ public class Purchase extends AppCompatActivity {
 
 
                 db.addOrder();
+
 
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);

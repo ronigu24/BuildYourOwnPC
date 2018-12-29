@@ -6,27 +6,33 @@
     android:layout_height="wrap_content"
     tools:context=".Activities.AdminActivity">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         app:title="Orders"
-        android:layout_width="401dp"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_width="422dp"
+        android:layout_height="66dp"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" tools:targetApi="lollipop"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="407dp"
-        android:layout_height="618dp"
-        android:layout_marginTop="71dp"
+        android:layout_height="651dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
         android:adjustViewBounds="true"
         android:clipChildren="false"
         android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+    </android.support.v7.widget.RecyclerView>
 
 </android.support.constraint.ConstraintLayout>

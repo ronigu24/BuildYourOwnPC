@@ -221,16 +221,35 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void changeStatus(String status, int id){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_STATUS, status);
+
+        db.update(TABLE_ORDERS,values,COLUMN_ID_ORDER+"="+id, null );
+
+        db.close();
+    }
+
 
     public ArrayList<String> myOrder() {
 
+
+
         ArrayList<String> array = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor;
         Log.i("SQLite", "DataBaseHelper myOrder function");
 
-        //Cursor cursor = db.query(table_Name, new String[]{COLUMN_NAME, COLUMN_PRICE}, COLUMN_ID, null, null, null, null);
-        Cursor cursor = db.rawQuery("select * from " + TABLE_ORDERS +" WHERE "+COLUMN_USER_ORDER +" = "+"'"+MainActivity.current_user.getName()+"'", null);
 
+        if(MainActivity.current_user.getName().equals("admin")){
+             cursor = db.rawQuery("select * from " + TABLE_ORDERS, null);
+        }
+        //Cursor cursor = db.query(table_Name, new String[]{COLUMN_NAME, COLUMN_PRICE}, COLUMN_ID, null, null, null, null);
+       else {
+             cursor = db.rawQuery("select * from " + TABLE_ORDERS + " WHERE " + COLUMN_USER_ORDER + " = " + "'" + MainActivity.current_user.getName() + "'", null);
+        }
         String name, price, status;
 
         if (cursor.moveToFirst()) {
@@ -255,6 +274,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             db.close();
 return array;
         }
+
+
+
 
 
 
