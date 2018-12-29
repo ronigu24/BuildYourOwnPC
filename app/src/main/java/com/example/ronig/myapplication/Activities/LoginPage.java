@@ -80,12 +80,14 @@ public class LoginPage extends AppCompatActivity {
 
                                 Log.d("TAG", "Setup default preferences");
                                 firstUse();
-                                db.Build_DataBase();
-                            } else {
-                                Log.d("TAG", "SharedPreferences myPref : exist");
 
                             }
+                            else {
+                                Log.d("TAG", "SharedPreferences myPref : exist");
 
+
+                            }
+                            db.Build_DataBase();
 
                             // Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
                             //   db.addProduct("intel_core_i7_8700k_3_7ghz","1800");

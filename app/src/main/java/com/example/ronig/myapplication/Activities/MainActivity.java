@@ -15,6 +15,7 @@ import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.GPU.GPU_Main_Tab;
 import com.example.ronig.myapplication.Memory.Memory_Main_Tab;
 import com.example.ronig.myapplication.MotherBoard.MotherBoard_Main_Tab;
+import com.example.ronig.myapplication.MyOrders;
 import com.example.ronig.myapplication.Objects.CPU_Object;
 import com.example.ronig.myapplication.Objects.Case_Object;
 import com.example.ronig.myapplication.Objects.Computer_Object;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
   public static MotherBoard_Object user_motherboard;
   public static Case_Object user_case;
 
+
   public static Computer_Object user_pc;
 
     @Override
@@ -56,8 +58,15 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Order Cart is empty", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if(MainActivity.current_user.my_pc.totalprice=="") {
+                    Snackbar.make(view, "Order Cart is empty", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                else
+                {
+                    Intent i = new Intent(getApplicationContext(), MyOrders.class);
+                    startActivity(i);
+                }
             }
         });
 

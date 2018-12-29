@@ -17,11 +17,15 @@ import com.example.ronig.myapplication.R;
 public class Purchase extends AppCompatActivity {
 
 
+    public static DataBaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
 
+
+        db = new DataBaseHelper(this);
         Button pay_Btn = (Button) findViewById(R.id.pay);
         TextView pay_Cpu_TextView = (TextView) findViewById(R.id.paytext_cpu);
         TextView pay_Motherboard_TextView = (TextView) findViewById(R.id.paytext_motherboard);
@@ -43,7 +47,9 @@ public class Purchase extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                CPU_Main_Tab.db.addOrder();
+
+
+                db.addOrder();
 
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);

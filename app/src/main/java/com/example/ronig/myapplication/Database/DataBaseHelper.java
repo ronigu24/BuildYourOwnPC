@@ -30,7 +30,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "Database.db";
+    private static final String DATABASE_NAME = "Database7.db";
 
     // User table name
     private static final String TABLE_USER = "user";
@@ -60,6 +60,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_STATUS = "Status";
     private static final String COLUMN_TOTAL_PRICE = "TotalPrice";
     private static final String COLUMN_USER_ORDER = "UserOrder";
+    private static final String COLUMN_ID_ORDER ="ID";
 
 
 
@@ -88,7 +89,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME + " TEXT,"
             + COLUMN_PRICE + " TEXT" + ")";
     private String CREATE_ORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS + "("
-            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_ORDER + " TEXT,"
+            + COLUMN_ID_ORDER + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_ORDER + " TEXT,"
             + COLUMN_TOTAL_PRICE + " TEXT, " + COLUMN_STATUS + " TEXT" + ")";
 
 
@@ -228,9 +229,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(COLUMN_ID, MainActivity.current_user.getId());
+       // values.put(COLUMN_ID_ORDER, "1");
         values.put(COLUMN_USER_ORDER, MainActivity.current_user.getName());
-        values.put(COLUMN_TOTAL_PRICE, "fdsaf");
+        values.put(COLUMN_TOTAL_PRICE, MainActivity.current_user.my_pc.totalprice);
         values.put(COLUMN_STATUS, "Order pending approval");
 
         // Inserting Row
