@@ -8,6 +8,7 @@ public class Computer_Object {
     public Memory_Object memory_name;
     public MotherBoard_Object motherboard_name;
     public SSD_Object ssd_name;
+public String totalprice=" ";
 
     public Computer_Object()
     {
@@ -37,6 +38,9 @@ public class Computer_Object {
         sum+=Integer.parseInt(memory_name.price.substring(0,memory_name.price.length()-2).trim());
         sum+=Integer.parseInt(motherboard_name.price.substring(0,motherboard_name.price.length()-2).trim());
         sum+=Integer.parseInt(ssd_name.price.substring(0,ssd_name.price.length()-2).trim());
+
+        this.totalprice=""+sum;
+
         return "Price: " + sum;
     }
 
