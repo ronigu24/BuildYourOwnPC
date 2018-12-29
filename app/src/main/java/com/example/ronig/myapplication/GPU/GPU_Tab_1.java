@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
 import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
+import com.example.ronig.myapplication.Case.Case_Main_Tab;
 import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.Objects.CPU_Object;
 import com.example.ronig.myapplication.Objects.GPU_Object;
@@ -36,7 +37,7 @@ public class GPU_Tab_1 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Gpu_Tab1);
         price =(TextView) rootView.findViewById(R.id.Price_Gpu_Tab1);
 
-        GPU_Main_Tab.Insert(getActivity(), 1, text, price);
+        GPU_Main_Tab.Insert(text, price, 1);
 
         Add_Gpu_Tab_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override

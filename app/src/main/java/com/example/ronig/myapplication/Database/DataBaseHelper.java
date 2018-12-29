@@ -316,7 +316,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //Cursor cursor = db.query(table_Name, new String[]{COLUMN_NAME, COLUMN_PRICE}, COLUMN_ID, null, null, null, null);
         Cursor cursor = db.rawQuery("select * from "+table_Name,null);
 
-String name, price;
+        String name, price;
 
 
         if(cursor.moveToFirst()) {
@@ -333,7 +333,7 @@ String name, price;
                  price = cursor.getString(cursor.getColumnIndex(COLUMN_PRICE));
                 array.add(price);
 
-                cursor.moveToNext();
+                //cursor.moveToNext();
             }
         }
         /*if (cursor != null) {

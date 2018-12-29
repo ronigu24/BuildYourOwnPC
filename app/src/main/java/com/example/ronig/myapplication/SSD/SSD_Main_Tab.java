@@ -31,6 +31,7 @@ import java.util.ArrayList;
 public class SSD_Main_Tab extends AppCompatActivity {
 
     public static DataBaseHelper db;
+    protected static ArrayList<String> array = new ArrayList<>();
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -59,6 +60,8 @@ public class SSD_Main_Tab extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        buildArrayDB();
 
     }
 
@@ -130,10 +133,12 @@ public class SSD_Main_Tab extends AppCompatActivity {
         }
     }
 
-    public static void Insert(Context context, int tab, TextView text, TextView price){
+    public void buildArrayDB(){
+        db = new DataBaseHelper(this);
+        array = db.fetch("SSD");
+    }
 
-        CPU_Main_Tab.db = new DataBaseHelper(context);
-        ArrayList<String> array = CPU_Main_Tab.db.fetch("SSD");
+    public static void Insert(TextView text, TextView price, int tab) {
 
         text.setText(array.get(tab*2-2));
         price.setText(array.get(tab*2-1));

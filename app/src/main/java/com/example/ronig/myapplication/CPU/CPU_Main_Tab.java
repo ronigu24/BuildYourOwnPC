@@ -25,7 +25,7 @@ public class CPU_Main_Tab extends AppCompatActivity {
 
     public static DataBaseHelper db;
     private static Context context;
-    public static ArrayList<String> array=new ArrayList<String> ();
+    protected static ArrayList<String> array = new ArrayList<>();
 
 
     /**
@@ -56,6 +56,7 @@ public class CPU_Main_Tab extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        buildArrayDB();
 
     }
 
@@ -128,14 +129,15 @@ public class CPU_Main_Tab extends AppCompatActivity {
         }
     }
 
-    public static void Insert(Context context, int tab, TextView text, TextView price){
+    public void buildArrayDB(){
+        db = new DataBaseHelper(this);
+        array = db.fetch("cpu");
+    }
 
-        CPU_Main_Tab.db = new DataBaseHelper(context);
-            ArrayList<String> array = CPU_Main_Tab.db.fetch("cpu");
+    public static void Insert(TextView text, TextView price, int tab) {
 
         text.setText(array.get(tab*2-2));
         price.setText(array.get(tab*2-1));
 
     }
-
 }

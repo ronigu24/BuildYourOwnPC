@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
+import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
 import com.example.ronig.myapplication.Objects.Case_Object;
 import com.example.ronig.myapplication.R;
 
@@ -29,7 +30,7 @@ public class Case_Tab_2 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Case_Tab2);
         price =(TextView) rootView.findViewById(R.id.Price_Case_Tab2);
 
-        Case_Main_Tab.Insert(getActivity(), 2, text, price);
+        Case_Main_Tab.Insert(text, price, 2);
 
         Add_Case_Tab_2_Button.setOnClickListener(new View.OnClickListener() {
             @Override

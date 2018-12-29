@@ -32,7 +32,7 @@ public class GPU_Tab_3 extends Fragment {
         text = (TextView) rootView.findViewById(R.id.Text_Gpu_Tab3);
         price =(TextView) rootView.findViewById(R.id.Price_Gpu_Tab3);
 
-        GPU_Main_Tab.Insert(getActivity(), 3, text, price);
+        GPU_Main_Tab.Insert(text, price, 3);
 
         Add_Gpu_Tab_3_Button.setOnClickListener(new View.OnClickListener() {
             @Override
