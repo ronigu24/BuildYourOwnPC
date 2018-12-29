@@ -30,7 +30,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "Database7.db";
+    private static final String DATABASE_NAME = "Database8.db";
 
     // User table name
     private static final String TABLE_USER = "user";
@@ -221,6 +221,40 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+
+    public ArrayList<String> myOrder() {
+
+        ArrayList<String> array = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Log.i("SQLite", "DataBaseHelper myOrder function");
+
+        //Cursor cursor = db.query(table_Name, new String[]{COLUMN_NAME, COLUMN_PRICE}, COLUMN_ID, null, null, null, null);
+        Cursor cursor = db.rawQuery("select * from " + TABLE_ORDERS +" WHERE "+COLUMN_USER_ORDER +" = "+"'"+MainActivity.current_user.getName()+"'", null);
+
+        String name, price, status;
+
+        if (cursor.moveToFirst()) {
+
+            name = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ORDER));
+            price = cursor.getString(cursor.getColumnIndex(COLUMN_TOTAL_PRICE));
+            status = cursor.getString(cursor.getColumnIndex(COLUMN_STATUS));
+            array.add(name + " " + price + " " + status);
+
+            while (cursor.moveToNext()) {
+
+                name = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ORDER));
+                price = cursor.getString(cursor.getColumnIndex(COLUMN_TOTAL_PRICE));
+                status = cursor.getString(cursor.getColumnIndex(COLUMN_STATUS));
+
+                array.add(name + " " + price + " " + status);
+
+            }
+
+        }
+            cursor.close();
+            db.close();
+return array;
+        }
 
 
 

@@ -11,11 +11,9 @@ import android.widget.Toast;
 
 import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
 import com.example.ronig.myapplication.Case.Case_Main_Tab;
-import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.GPU.GPU_Main_Tab;
 import com.example.ronig.myapplication.Memory.Memory_Main_Tab;
 import com.example.ronig.myapplication.MotherBoard.MotherBoard_Main_Tab;
-import com.example.ronig.myapplication.MyOrders;
 import com.example.ronig.myapplication.Objects.CPU_Object;
 import com.example.ronig.myapplication.Objects.Case_Object;
 import com.example.ronig.myapplication.Objects.Computer_Object;

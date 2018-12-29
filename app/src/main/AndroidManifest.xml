@@ -62,7 +62,7 @@
             android:label="@string/title_activity_ssd__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Activities.AdminActivity" />
-        <activity android:name=".MyOrders"></activity>
+        <activity android:name=".Activities.MyOrders"></activity>
     </application>
 
 </manifest>
