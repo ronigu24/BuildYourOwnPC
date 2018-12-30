@@ -40,27 +40,27 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Activities.LoginActivity" />
         <activity
-            android:name=".CPU.CPU_Main_Tab"
+            android:name=".Tabs.CPU.CPU_Main_Tab"
             android:label="@string/title_activity_cpu__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".MotherBoard.MotherBoard_Main_Tab"
+            android:name=".Tabs.MotherBoard.MotherBoard_Main_Tab"
             android:label="@string/title_activity_mother_board__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".Case.Case_Main_Tab"
+            android:name=".Tabs.Case.Case_Main_Tab"
             android:label="@string/title_activity_case__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".GPU.GPU_Main_Tab"
+            android:name=".Tabs.GPU.GPU_Main_Tab"
             android:label="@string/title_activity_gpu__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".Memory.Memory_Main_Tab"
+            android:name=".Tabs.RAM.RAM_Main_Tab"
             android:label="@string/title_activity_memory__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".SSD.SSD_Main_Tab"
+            android:name=".Tabs.SSD.SSD_Main_Tab"
             android:label="@string/title_activity_ssd__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Activities.AdminActivity" />

@@ -48,7 +48,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/memory"
-        android:text="@string/memory"
+        android:text="@string/ram"
         android:textColor="#8effffff"
         android:textSize="25sp"
         android:textStyle="bold"

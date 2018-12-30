@@ -123,8 +123,6 @@
     <string name="todo">TODO</string>
     <string name="title_activity_register_page">RegisterPage</string>
     <string name="submit">Submit</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="password_butt">password</string>
     <string name="username_register">Username</string>
@@ -227,4 +225,8 @@
     <string name="notification_channel_name">BuilderYourOwnPC</string>
     <string name="channel_description">This is a description</string>
     <string name="channel_id">MyChannel</string>
+    <string name="ram">RAM</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+
 </resources>

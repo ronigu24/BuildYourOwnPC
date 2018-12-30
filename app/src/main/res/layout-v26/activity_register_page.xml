@@ -13,7 +13,7 @@
 
         <EditText
             android:id="@+id/username_Input"
-            android:layout_width="wrap_content"
+            android:layout_width="261dp"
             android:layout_height="wrap_content"
 
 
@@ -23,30 +23,29 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/username"
-            android:inputType="textPassword" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/password_Input"
-            android:layout_width="wrap_content"
+            android:layout_width="261dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="255dp"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/password_butt"
-            android:inputType="textPassword"
-            android:text="@string/password_butt" />
+            android:hint="@string/password"
+            android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/email_Input"
-            android:layout_width="wrap_content"
+            android:layout_width="261dp"
             android:layout_height="wrap_content"
 
 
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="338dp"
+            android:layout_marginTop="328dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/email"
@@ -54,12 +53,12 @@
 
         <Button
             android:id="@+id/submit_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
 
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="202dp"
+            android:layout_marginBottom="299dp"
             android:text="@string/submit" />
 
     </RelativeLayout>
