@@ -2,11 +2,6 @@ package com.example.ronig.myapplication.Activities;
 
 
 import android.Manifest;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -17,14 +12,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
-import android.widget.RemoteViews;
 import android.widget.Toast;
 
-import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
-import com.example.ronig.myapplication.Case.Case_Main_Tab;
-import com.example.ronig.myapplication.GPU.GPU_Main_Tab;
-import com.example.ronig.myapplication.Memory.Memory_Main_Tab;
-import com.example.ronig.myapplication.MotherBoard.MotherBoard_Main_Tab;
+import com.example.ronig.myapplication.Tabs.CPU.CPU_Main_Tab;
+import com.example.ronig.myapplication.Tabs.Case.Case_Main_Tab;
+import com.example.ronig.myapplication.Tabs.GPU.GPU_Main_Tab;
+import com.example.ronig.myapplication.Tabs.RAM.RAM_Main_Tab;
+import com.example.ronig.myapplication.Tabs.MotherBoard.MotherBoard_Main_Tab;
 import com.example.ronig.myapplication.Objects.Products.CPU;
 import com.example.ronig.myapplication.Objects.Products.Case;
 import com.example.ronig.myapplication.Objects.Products.Computer;
@@ -34,15 +28,9 @@ import com.example.ronig.myapplication.Objects.Products.MotherBoard;
 import com.example.ronig.myapplication.Objects.Products.SSD;
 import com.example.ronig.myapplication.Objects.User;
 import com.example.ronig.myapplication.R;
-import com.example.ronig.myapplication.SSD.SSD_Main_Tab;
+import com.example.ronig.myapplication.Tabs.SSD.SSD_Main_Tab;
 
 public class MainActivity extends AppCompatActivity {
-
-
-
-
-
-
 
   private Button buybutt;
   private Button cpubutt;
@@ -83,12 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), MyOrdersActivity.class);
                     startActivity(i);
                 }
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(),"jfdkbdjfjkf");
-                builder.setSmallIcon(R.drawable.order);
-                builder.setContentTitle("NOTY");
-                builder.setContentText("this is sagi");
-                NotificationManagerCompat nmc= NotificationManagerCompat.from(getApplicationContext());
-                nmc.notify(001,builder.build());
+
             }
         });
 
@@ -147,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         memorybutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),Memory_Main_Tab.class);
+                Intent i = new Intent(getApplicationContext(),RAM_Main_Tab.class);
                 startActivity(i);
 
             }
