@@ -27,7 +27,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "Database8.db";
+    private static final String DATABASE_NAME = "Database.db";
 
     // User table name
     private static final String TABLE_USER = "user";
@@ -297,60 +297,60 @@ return array;
     {
 
        Product component_arr[]= new Product[4];
-        component_arr[0]=new CPU("intel_core_i7_8700k_3_7ghz!", "1800 ₪");
-        component_arr[1]=new CPU("Intel Core i5, 6500 4x, 3.2Ghz!", "930 ₪");
-        component_arr[2]=new CPU("intel_core_i3_8100_8th_genaration!", "670 ₪");
-        component_arr[3]=new CPU("amd_ryzen_7_1800x_8_cores_3_6ghz!", "1120 ₪");
+        component_arr[0]=new CPU("Intel Core i7, 8700k, 3.7GHz", "1800 ₪");
+        component_arr[1]=new CPU("Intel Core i5, 6500 4x, 3.2Ghz", "930 ₪");
+        component_arr[2]=new CPU("Intel Core i3, 8100,8th genaration", "670 ₪");
+        component_arr[3]=new CPU("AMD Ryzen 7, 1800x, 8 cores, 3.6GHz", "1120 ₪");
 
         for(int i=0; i<component_arr.length; i++)
         {
             addProduct(component_arr[i].getName(),component_arr[i].getPrice(),TABLE_CPU);
         }
 
-        component_arr[0]=new MotherBoard("gigabyte_z97x_gaming_5", "750 ₪");
-        component_arr[1]=new MotherBoard("intel_b360_aorus_motherboard_with_rgb_fusion_with_digital_leds", "610 ₪");
-        component_arr[2]=new MotherBoard("intel_h370_ultra_durable_motherboard", "430 ₪");
-        component_arr[3]=new MotherBoard("gigabyte_unveils_new_990fx_and_970_gaming_motherboards_amd_fx", "330 ₪");
+        component_arr[0]=new MotherBoard("Gigabyte, Z97x, gaming", "750 ₪");
+        component_arr[1]=new MotherBoard("Intel B360, Aorus_with rgb fusion and digital leds", "610 ₪");
+        component_arr[2]=new MotherBoard("Intel H370, Ultra durable", "430 ₪");
+        component_arr[3]=new MotherBoard("Gigabyte unveils, 990fx gaming", "330 ₪");
 
        for(int i=0; i<component_arr.length; i++)
        {
            addProduct(component_arr[i].getName(),component_arr[i].getPrice(),TABLE_MOTHERBOARD);
        }
 
-        component_arr[0]=new RAM("fury_hyperx_ddr4_8gb", "360 ₪");
-        component_arr[1]=new RAM("G.SKILL DDR4 32GB Memory Kit 4400MHz", "2320 ₪");
-        component_arr[2]=new RAM("G.Skill Announces 32GB DDR4-4266MHz Trident Z RGB Memory Kits", "2110 ₪");
-        component_arr[3]=new RAM("DDR4_RAM-4-8GB-2133", "435 ₪");
+        component_arr[0]=new RAM("Fury Hyperx,_DDR4, 8gb", "360 ₪");
+        component_arr[1]=new RAM("G.SKILL, DDR4, 32GB, 4400MHz", "2320 ₪");
+        component_arr[2]=new RAM("G.Skill, Announces, 32GB, DDR4-4266MHz Trident", "2110 ₪");
+        component_arr[3]=new RAM("DDR4, RAM-4, 8GB-2133", "435 ₪");
 
         for(int i=0; i<component_arr.length; i++)
         {
             addProduct(component_arr[i].getName(),component_arr[i].getPrice(),TABLE_RAM);
         }
 
-        component_arr[0]=new SSD("samsung_ssd_evo_970_1tb", "750 ₪");
-        component_arr[1]=new SSD("SanDisk SSD PLUS SDSSDA240G 240GB", "220 ₪");
-        component_arr[2]=new SSD("Kingston SSDNow V100 128GB SSD", "110 ₪");
-        component_arr[3]=new SSD("Corsair Force LE200 120GB SSD Sata III 2.5'' 550/500 Mb/s", "100 ₪");
+        component_arr[0]=new SSD("Samsung Evo 970, 1TB", "750 ₪");
+        component_arr[1]=new SSD("SanDisk PLUS SDSSDA, 240GB", "220 ₪");
+        component_arr[2]=new SSD("Kingston SSDNow V100 ,128GB", "110 ₪");
+        component_arr[3]=new SSD("Corsair Force LE200, 120GB, Sata 3", "100 ₪");
 
         for(int i=0; i<component_arr.length; i++)
         {
             addProduct(component_arr[i].getName(),component_arr[i].getPrice(),TABLE_SSD);
         }
 
-        component_arr[0]=new GPU("MSI R9 390 GAMING 8G Graphics Card", "1420 ₪");
-        component_arr[1]=new GPU("gtx_1050_ti_4gb", "830 ₪");
-        component_arr[2]=new GPU("gigabyte_gtx_950_2gb", "450 ₪");
-        component_arr[3]=new GPU("geforce_gtx_1070_windforce_8g", "2200 ₪");
+        component_arr[0]=new GPU("MSI R9, 390 GAMING, 8G Graphics Card", "1420 ₪");
+        component_arr[1]=new GPU("GTX 1050, Ti 4GB", "830 ₪");
+        component_arr[2]=new GPU("Gigabyte GTX 950, 2GB", "450 ₪");
+        component_arr[3]=new GPU("Geforce_GTX 1070, Windforce_8GB", "2200 ₪");
 
         for(int i=0; i<component_arr.length; i++)
         {
             addProduct(component_arr[i].getName(),component_arr[i].getPrice(),TABLE_GPU);
         }
 
-        component_arr[0]=new Case("Cougar mx350 tg", "399 ₪");
-        component_arr[1]=new Case("Game Max Eclipse RGB Tempered Glass Midi PC Gaming Case", "370 ₪");
-        component_arr[2]=new Case("Cougar MX310", "200 ₪");
-        component_arr[3]=new Case("Corsair SPEC-03 Red", "299 ₪");
+        component_arr[0]=new Case("Cougar, MX350, TG", "399 ₪");
+        component_arr[1]=new Case("Game Max Eclipse, RGB Tempered, Glass Midi PC Gaming", "370 ₪");
+        component_arr[2]=new Case("Cougar, MX310", "200 ₪");
+        component_arr[3]=new Case("Corsair, SPEC-03, Red", "299 ₪");
 
         for(int i=0; i<component_arr.length; i++)
         {
@@ -386,12 +386,9 @@ return array;
                  price = cursor.getString(cursor.getColumnIndex(COLUMN_PRICE));
                 array.add(price);
 
-                //cursor.moveToNext();
             }
         }
-        /*if (cursor != null) {
-            cursor.moveToFirst();
-        }*/
+
         cursor.close();
         db.close();
         return array;
