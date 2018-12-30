@@ -1,22 +1,24 @@
 package com.example.ronig.myapplication.Activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
 import com.example.ronig.myapplication.Database.DataBaseHelper;
-import com.example.ronig.myapplication.Objects.Order;
+import com.example.ronig.myapplication.Database.DataBaseQuery;
 import com.example.ronig.myapplication.R;
 
 import java.io.File;
@@ -29,12 +31,21 @@ public class PurchaseActivity extends AppCompatActivity {
 
     public static DataBaseHelper db;
 
+    private NotificationCompat.Builder mBuilder;
+    private NotificationManagerCompat notificationManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
 
+        createNotificationChannel();
+        notificationManager = NotificationManagerCompat.from(this);
 
+        mBuilder = new NotificationCompat.Builder(this, "MyChannel")
+                .setContentTitle("Title")
+                .setContentText("Content")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
 
         db = new DataBaseHelper(this);
@@ -71,9 +82,13 @@ public class PurchaseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 db.addOrder();
 
+                Log.d("TAG", "Notification run");
+                mBuilder.setContentText("Thank you for your purchase, Your order is pending for approval");
+                mBuilder.setContentTitle("BuildYourOwnPC");
+                mBuilder.setSmallIcon(R.drawable.order);
+                notificationManager.notify(1, mBuilder.build());
 
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
@@ -110,5 +125,19 @@ public class PurchaseActivity extends AppCompatActivity {
         }
     }
 
+
+    public void createNotificationChannel() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.notification_channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            String cid = getString(R.string.channel_id);
+            NotificationChannel channel = new NotificationChannel(cid, name, importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
 }
 

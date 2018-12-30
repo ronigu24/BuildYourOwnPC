@@ -2,14 +2,22 @@ package com.example.ronig.myapplication.Activities;
 
 
 import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
@@ -29,6 +37,12 @@ import com.example.ronig.myapplication.R;
 import com.example.ronig.myapplication.SSD.SSD_Main_Tab;
 
 public class MainActivity extends AppCompatActivity {
+
+
+
+
+
+
 
   private Button buybutt;
   private Button cpubutt;
@@ -69,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), MyOrdersActivity.class);
                     startActivity(i);
                 }
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(),"jfdkbdjfjkf");
+                builder.setSmallIcon(R.drawable.order);
+                builder.setContentTitle("NOTY");
+                builder.setContentText("this is sagi");
+                NotificationManagerCompat nmc= NotificationManagerCompat.from(getApplicationContext());
+                nmc.notify(001,builder.build());
             }
         });
 
@@ -165,6 +185,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
     }
 }
 

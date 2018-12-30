@@ -1,14 +1,22 @@
 package com.example.ronig.myapplication.Activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Database.DataBaseHelper;
@@ -17,13 +25,21 @@ import com.example.ronig.myapplication.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public static final int NOTIFICATION_ID = 1;
-
     EditText inputUsername, inputPassword;
     Button loginButton, registerButton;
     DataBaseHelper db;
 
     SharedPreferences sp;
+
+
+    public static class DownloadCancelReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            System.out.println("Received Cancelled Event");
+        }
+    }
 
 
     @Override
@@ -34,7 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         db = new DataBaseHelper(this);
 
         sp = getSharedPreferences("myPref", Context.MODE_PRIVATE);
-
 
 
         initViews();
@@ -107,8 +122,10 @@ public class LoginActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(i);
+
             }
         });
     }
@@ -159,4 +176,5 @@ public class LoginActivity extends AppCompatActivity {
         }
         return false;
     }
+
 }

@@ -220,5 +220,11 @@
     <string name="amd_ryzen_7_1800x_8_cores_3_6ghz">AMD Ryzen 7, 1800x, 8 Cores, 3.6Ghz</string>
     <string name="cougar_mx310_">Cougar, MX310</string>
     <string name="textview">TextView</string>
-
+    <string name="close_me">Close Me</string>
+    <string name="btnclose">Login</string>
+    <string name="register1">Register</string>
+    <string name="close_me1">Close Me</string>
+    <string name="notification_channel_name">BuilderYourOwnPC</string>
+    <string name="channel_description">This is a description</string>
+    <string name="channel_id">MyChannel</string>
 </resources>

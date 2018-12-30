@@ -218,6 +218,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void addProcut(String name, String price,String Table_name){
+
+    }
+
     public void changeStatus(String status, int id){
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -269,9 +273,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             db.close();
 return array;
         }
-
-
-
 
 
 

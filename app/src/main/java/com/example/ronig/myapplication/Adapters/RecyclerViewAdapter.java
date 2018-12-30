@@ -1,10 +1,6 @@
-package com.example.ronig.myapplication.Activities;
+package com.example.ronig.myapplication.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ronig.myapplication.Activities.MainActivity;
 import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.Objects.Order;
 import com.example.ronig.myapplication.R;
