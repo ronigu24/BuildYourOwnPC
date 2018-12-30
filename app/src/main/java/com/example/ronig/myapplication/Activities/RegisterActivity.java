@@ -20,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText editTextPassword;
     Button registerButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                         //Email does not exist now add new user to database
                         db.addUser(new User(null, UserName, Password, Email));
-                        //Snackbar.make(registerButton, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
                         Toast.makeText(getApplicationContext(), "User created successfully! Please Login", Toast.LENGTH_SHORT).show();
 
                         Intent i = new Intent(getApplicationContext(),LoginActivity.class);
@@ -52,7 +52,6 @@ public class RegisterActivity extends AppCompatActivity {
                     } else {
 
                         //Email exists with email input provided so show error user already exist
-                        //Snackbar.make(registerButton, "User already exists with same email ", Snackbar.LENGTH_LONG).show();
                         Toast.makeText(getApplicationContext(), "User already exists with same email", Toast.LENGTH_SHORT).show();
 
                     }
@@ -71,58 +70,40 @@ public class RegisterActivity extends AppCompatActivity {
 
     //This method is used to validate input given by user
     public boolean validate() {
-        boolean valid = false;
+        boolean valid = true;
 
         //Get values from EditText fields
-        String UserName = editTextUserName.getText().toString();
+        String Username = editTextUserName.getText().toString();
         String Password = editTextPassword.getText().toString();
         String Email = editTextEmail.getText().toString();
 
-        //Handling validation for UserName field
-        if (UserName.isEmpty()) {
+        //Handling validation for Password field
+        if (Username.isEmpty()) {
             valid = false;
-            //textInputLayoutUserName.setError("Please enter valid username!");
-            Toast.makeText(getApplicationContext(), "Please enter valid username!", Toast.LENGTH_SHORT).show();
-        } else {
-            if (UserName.length() > 5) {
-                valid = true;
-                //textInputLayoutUserName.setError(null);
-                //Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
-            } else {
-                valid = false;
-                //textInputLayoutUserName.setError("Username is to short!");
-                Toast.makeText(getApplicationContext(), "Username is to short!", Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(getApplicationContext(), "Please enter valid username", Toast.LENGTH_SHORT).show();
+        }
+
+        else if (Username.length() < 5) {
+            valid = false;
+            Toast.makeText(getApplicationContext(), "Username is to short!", Toast.LENGTH_SHORT).show();
         }
 
         //Handling validation for Password field
         if (Password.isEmpty()) {
             valid = false;
-            //textInputLayoutPassword.setError("Please enter valid password!");
             Toast.makeText(getApplicationContext(), "Please enter valid password!", Toast.LENGTH_SHORT).show();
-        } else {
-            if (Password.length() > 5) {
-                valid = true;
-                //textInputLayoutPassword.setError(null);
-                //Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
-            } else {
-                valid = false;
-                //textInputLayoutPassword.setError("Password is to short!");
-                Toast.makeText(getApplicationContext(), "Password is to short!", Toast.LENGTH_SHORT).show();
-            }
         }
 
-        //Handling validation for Email field
+        else if (Password.length() < 5) {
+            valid = false;
+            Toast.makeText(getApplicationContext(), "Password is to short!", Toast.LENGTH_SHORT).show();
+        }
+
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
             valid = false;
-            //textInputLayoutEmail.setError("Please enter valid email!");
             Toast.makeText(getApplicationContext(), "Please enter valid email!", Toast.LENGTH_SHORT).show();
-        } else {
-            valid = true;
-            //textInputLayoutEmail.setError(null);
-            //Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
-        }
 
-        return valid;
+        }
+            return valid;
     }
 }
