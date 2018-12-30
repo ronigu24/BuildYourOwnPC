@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
+import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -23,13 +24,20 @@ import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.Objects.User;
 import com.example.ronig.myapplication.R;
 
+import org.json.JSONException;
+
+import java.io.File;
+import java.io.IOException;
+
 public class LoginActivity extends AppCompatActivity {
+
+    private static final String TAG = "LoginActivity";
 
     EditText inputUsername, inputPassword;
     Button loginButton, registerButton;
     DataBaseHelper db;
 
-    SharedPreferences sp;
+    //SharedPreferences sp;
 
 
     public static class DownloadCancelReceiver extends BroadcastReceiver {
@@ -49,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
         db = new DataBaseHelper(this);
 
-        sp = getSharedPreferences("myPref", Context.MODE_PRIVATE);
+        //sp = getSharedPreferences("myPref", Context.MODE_PRIVATE);
 
 
         initViews();
@@ -67,40 +75,30 @@ public class LoginActivity extends AppCompatActivity {
                     String Username = inputUsername.getText().toString();
                     String Password = inputPassword.getText().toString();
 
-                    if (Username.equals("admin")) {
+                    if (Username.equals("admin") && Password.equals("admin")) {
 
                         MainActivity.current_user = new User(null, Username, Password, null);
                         Intent i = new Intent(getApplicationContext(), AdminActivity.class);
                         startActivity(i);
                         finish();
+
                     } else {
 
                         //Authenticate user
                         MainActivity.current_user = db.Authenticate(new User(null, Username, Password, null));
 
-
                         //Check Authentication is successful or not
                         if (MainActivity.current_user != null) {
 
-
                             Toast.makeText(getApplicationContext(), "Successfully Logged in!", Toast.LENGTH_SHORT).show();
 
-
-
-                            /* now store your primitive type values. In this case it is true, 1f and Hello! World  */
-                            //File f = new File("/data/data/" + getPackageName() +  "/shared_prefs/" + FILENAME + ".xml");
-                            if (!Used()) {
-
-                                Log.d("TAG", "Setup default preferences");
-                                firstUse();
-
+                            try {
+                                initDataBase();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e(TAG, e.toString());
+                                System.exit(-1);
                             }
-                            else {
-                                Log.d("TAG", "SharedPreferences myPref : exist");
-
-
-                            }
-                            db.Build_DataBase();
 
                             //User Logged in Successfully Launch You home screen activity
                             Intent i = new Intent(getApplicationContext(), MainActivity.class);
@@ -147,7 +145,6 @@ public class LoginActivity extends AppCompatActivity {
         //Handling validation for Password field
         if (Username.isEmpty()) {
             valid = false;
-            //textInputLayoutPassword.setError("Please enter valid password!");
             Toast.makeText(getApplicationContext(), "Please enter valid username", Toast.LENGTH_SHORT).show();
         }
 
@@ -155,26 +152,30 @@ public class LoginActivity extends AppCompatActivity {
         if (Password.isEmpty()) {
             valid = false;
             Toast.makeText(getApplicationContext(), "Please enter valid password!", Toast.LENGTH_SHORT).show();
-            //textInputLayoutPassword.setError("Please enter valid password!");
+
         }
 
         return valid;
     }
 
-    public void firstUse() {
+    private void initDataBase() throws IOException, JSONException {
 
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString("Used previously", "true");
-        editor.commit();
+        Context context = getApplicationContext();
+        SharedPreferences sharedPref = context.getSharedPreferences("myPreference",Context.MODE_PRIVATE);
+        boolean firstTime = sharedPref.getBoolean("Login by user", true);
 
-    }
-
-    public boolean Used() {
-
-        if (sp.contains("Used previously")) {
-            return true;
+        if(firstTime) {
+            Log.d(TAG, "First entry of this device");
+            SharedPreferences.Editor speditor = sharedPref.edit();
+            speditor.putBoolean("Reload the Database!", false);
+            speditor.commit();
+            db.Build_DataBase();
         }
-        return false;
+
+        else {
+            Log.d(TAG, "Don't reload the Database!");
+        }
+
     }
 
 }
