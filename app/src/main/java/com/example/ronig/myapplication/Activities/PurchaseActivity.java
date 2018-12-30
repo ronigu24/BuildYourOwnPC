@@ -2,7 +2,11 @@ package com.example.ronig.myapplication.Activities;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +19,12 @@ import com.example.ronig.myapplication.Database.DataBaseHelper;
 import com.example.ronig.myapplication.Objects.Order;
 import com.example.ronig.myapplication.R;
 
-public class Purchase extends AppCompatActivity {
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class PurchaseActivity extends AppCompatActivity {
 
 
     public static DataBaseHelper db;
@@ -24,6 +33,8 @@ public class Purchase extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
+
+
 
 
         db = new DataBaseHelper(this);
@@ -44,10 +55,21 @@ public class Purchase extends AppCompatActivity {
         setPayText(pay_Case_TextView, MainActivity.user_case.print() );
         setPayText(Price_TextView, MainActivity.user_pc.printsum());
 
+        FloatingActionButton fab = findViewById(R.id.fab2);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bitmap bitmap = takeScreenshot();
+                saveBitmap(bitmap);
+                Snackbar.make(view, "Print screen was taken", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+            }
+        });
+
         pay_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
 
                 db.addOrder();
@@ -59,10 +81,33 @@ public class Purchase extends AppCompatActivity {
             }
         });
 
+
+
     }
 
     public void setPayText(TextView textView,String print){
         textView.setText(print);
+    }
+
+    public Bitmap takeScreenshot() {
+        View rootView = findViewById(android.R.id.content).getRootView();
+        rootView.setDrawingCacheEnabled(true);
+        return rootView.getDrawingCache();
+    }
+
+    public void saveBitmap(Bitmap bitmap) {
+        File imagePath = new File(Environment.getExternalStorageDirectory() + "/screenshot.png");
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(imagePath);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            Log.e("GREC", e.getMessage(), e);
+        } catch (IOException e) {
+            Log.e("GREC", e.getMessage(), e);
+        }
     }
 
 }

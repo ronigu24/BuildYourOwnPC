@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <supports-screens>
         android:resizeable="true"
@@ -32,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.MainActivity" />
-        <activity android:name=".Activities.Purchase" />
+        <activity android:name=".Activities.PurchaseActivity" />
         <activity
             android:name=".Activities.RegisterActivity"
             android:label="@string/title_activity_register_page"
@@ -63,7 +64,7 @@
             android:label="@string/title_activity_ssd__main__tab"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Activities.AdminActivity" />
-        <activity android:name=".Activities.MyOrders" />
+        <activity android:name=".Activities.MyOrdersActivity" />
 
     </application>
 
