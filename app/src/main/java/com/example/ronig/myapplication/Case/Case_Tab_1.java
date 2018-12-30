@@ -1,7 +1,6 @@
 package com.example.ronig.myapplication.Case;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,9 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.CPU.CPU_Main_Tab;
-import com.example.ronig.myapplication.Database.DataBaseHelper;
-import com.example.ronig.myapplication.Objects.Case_Object;
+import com.example.ronig.myapplication.Objects.Products.Case;
 import com.example.ronig.myapplication.R;
 
 public class Case_Tab_1 extends Fragment {
@@ -39,9 +36,9 @@ public class Case_Tab_1 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Case Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-                MainActivity.user_case= new Case_Object(text.getText().toString(),price.getText().toString());
+                //Intent i = new Intent(getActivity(),MainActivity.class);
+                //startActivity(i);
+                MainActivity.user_case= new Case(text.getText().toString(),price.getText().toString());
                 getActivity().onBackPressed();
             }
         });

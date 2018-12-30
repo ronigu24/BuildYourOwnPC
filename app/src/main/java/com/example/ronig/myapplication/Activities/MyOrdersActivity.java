@@ -13,9 +13,9 @@ import com.example.ronig.myapplication.R;
 
 import java.util.ArrayList;
 
-public class MyOrders extends AppCompatActivity {
+public class MyOrdersActivity extends AppCompatActivity {
 
-    private static final String TAG = "MyOrders";
+    private static final String TAG = "MyOrdersActivity";
 
     private ArrayList<Order> names = new ArrayList<>();
 

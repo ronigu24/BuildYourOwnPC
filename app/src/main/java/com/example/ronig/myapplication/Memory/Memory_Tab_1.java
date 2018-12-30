@@ -1,7 +1,6 @@
 package com.example.ronig.myapplication.Memory;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,11 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.Database.DataBaseHelper;
-import com.example.ronig.myapplication.GPU.GPU_Main_Tab;
-import com.example.ronig.myapplication.Objects.Memory_Object;
+import com.example.ronig.myapplication.Objects.Products.RAM;
 import com.example.ronig.myapplication.R;
-import com.example.ronig.myapplication.SSD.SSD_Main_Tab;
 
 public class Memory_Tab_1 extends Fragment {
 
@@ -42,10 +38,11 @@ public class Memory_Tab_1 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Ram Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
+                //Intent i = new Intent(getActivity(),MainActivity.class);
+                //startActivity(i);
                 getActivity().finish();
-                MainActivity.user_ram= new Memory_Object(text.getText().toString(),price.getText().toString());
+                MainActivity.user_ram= new RAM(text.getText().toString(),price.getText().toString());
+                getActivity().onBackPressed();
 
             }
         });

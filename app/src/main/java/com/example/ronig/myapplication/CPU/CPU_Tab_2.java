@@ -11,11 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.Database.DataBaseHelper;
-import com.example.ronig.myapplication.Objects.CPU_Object;
+import com.example.ronig.myapplication.Objects.Products.CPU;
 import com.example.ronig.myapplication.R;
-
-import java.util.ArrayList;
 
 public class CPU_Tab_2 extends Fragment {
 
@@ -40,9 +37,10 @@ public class CPU_Tab_2 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Cpu Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-                MainActivity.user_cpu= new CPU_Object(text.getText().toString(),price.getText().toString());
+                //Intent i = new Intent(getActivity(),MainActivity.class);
+                //startActivity(i);
+                MainActivity.user_cpu= new CPU(text.getText().toString(),price.getText().toString());
+                getActivity().onBackPressed();
             }
         });
         return rootView;

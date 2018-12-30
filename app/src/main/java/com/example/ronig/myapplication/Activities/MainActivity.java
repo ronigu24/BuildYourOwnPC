@@ -1,9 +1,10 @@
 package com.example.ronig.myapplication.Activities;
 
 
-import android.os.Build;
+import android.Manifest;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,13 +17,13 @@ import com.example.ronig.myapplication.Case.Case_Main_Tab;
 import com.example.ronig.myapplication.GPU.GPU_Main_Tab;
 import com.example.ronig.myapplication.Memory.Memory_Main_Tab;
 import com.example.ronig.myapplication.MotherBoard.MotherBoard_Main_Tab;
-import com.example.ronig.myapplication.Objects.CPU_Object;
-import com.example.ronig.myapplication.Objects.Case_Object;
-import com.example.ronig.myapplication.Objects.Computer_Object;
-import com.example.ronig.myapplication.Objects.GPU_Object;
-import com.example.ronig.myapplication.Objects.Memory_Object;
-import com.example.ronig.myapplication.Objects.MotherBoard_Object;
-import com.example.ronig.myapplication.Objects.SSD_Object;
+import com.example.ronig.myapplication.Objects.Products.CPU;
+import com.example.ronig.myapplication.Objects.Products.Case;
+import com.example.ronig.myapplication.Objects.Products.Computer;
+import com.example.ronig.myapplication.Objects.Products.GPU;
+import com.example.ronig.myapplication.Objects.Products.RAM;
+import com.example.ronig.myapplication.Objects.Products.MotherBoard;
+import com.example.ronig.myapplication.Objects.Products.SSD;
 import com.example.ronig.myapplication.Objects.User;
 import com.example.ronig.myapplication.R;
 import com.example.ronig.myapplication.SSD.SSD_Main_Tab;
@@ -38,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
   private Button gpubutt;
 
   public static User current_user;
-  public static CPU_Object user_cpu;
-  public static GPU_Object user_gpu;
-  public static Memory_Object user_ram;
-  public static SSD_Object user_ssd;
-  public static MotherBoard_Object user_motherboard;
-  public static Case_Object user_case;
+  public static CPU user_cpu;
+  public static GPU user_gpu;
+  public static RAM user_ram;
+  public static SSD user_ssd;
+  public static MotherBoard user_motherboard;
+  public static Case user_case;
 
-  public static Computer_Object user_pc;
+  public static Computer user_pc;
 
 
     @Override
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},00);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent i = new Intent(getApplicationContext(), MyOrders.class);
+                    Intent i = new Intent(getApplicationContext(), MyOrdersActivity.class);
                     startActivity(i);
                 }
             }
@@ -88,13 +90,13 @@ public class MainActivity extends AppCompatActivity {
                 { Toast.makeText(getApplication(),"Case is missing",Toast.LENGTH_SHORT).show(); }
                 else {
 
-                    user_pc = new Computer_Object(user_cpu, user_motherboard, user_ram, user_ssd, user_gpu, user_case);
+                    user_pc = new Computer(user_cpu, user_motherboard, user_ram, user_ssd, user_gpu, user_case);
                     current_user.build_pc(user_pc);
 
 
-                    Intent i = new Intent(getApplicationContext(), Purchase.class);
+                    Intent i = new Intent(getApplicationContext(), PurchaseActivity.class);
                     startActivity(i);
-                    finish();
+
                 }
             }
 
@@ -108,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),CPU_Main_Tab.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),MotherBoard_Main_Tab.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),Memory_Main_Tab.class);
                 startActivity(i);
-                finish();
+
             }
 
 
@@ -141,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),SSD_Main_Tab.class);
                 startActivity(i);
-                finish();
+
             }
         });
         casebutt =(Button)findViewById(R.id.case1);
@@ -150,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),Case_Main_Tab.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),GPU_Main_Tab.class);
                 startActivity(i);
-                finish();
+
             }
         });
 

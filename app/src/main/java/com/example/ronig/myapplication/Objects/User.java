@@ -1,6 +1,6 @@
 package com.example.ronig.myapplication.Objects;
 
-import com.example.ronig.myapplication.Objects.Computer_Object;
+import com.example.ronig.myapplication.Objects.Products.Computer;
 
 public class User {
 
@@ -8,14 +8,14 @@ public class User {
     private String name;
     private String password;
     private String email;
-    public Computer_Object my_pc;
+    public Computer my_pc;
 
     public User(String id, String name, String password, String email){
         this.id = id;
         this.name = name;
         this.password = password;
         this.email = email;
-        this.my_pc=new Computer_Object();
+        this.my_pc=new Computer();
     }
 
     public String getId() {
@@ -50,5 +50,5 @@ public class User {
         this.password = password;
     }
 
-    public void build_pc(Computer_Object my_pc){this.my_pc=my_pc;}
+    public void build_pc(Computer my_pc){this.my_pc=my_pc;}
 }

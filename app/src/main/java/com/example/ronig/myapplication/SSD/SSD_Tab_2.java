@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.Objects.SSD_Object;
+import com.example.ronig.myapplication.Objects.Products.SSD;
 import com.example.ronig.myapplication.R;
 
 public class SSD_Tab_2 extends Fragment {
@@ -39,9 +39,10 @@ public class SSD_Tab_2 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Ssd Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-                MainActivity.user_ssd= new SSD_Object(text.getText().toString(),price.getText().toString());
+                //Intent i = new Intent(getActivity(),MainActivity.class);
+                //startActivity(i);
+                MainActivity.user_ssd= new SSD(text.getText().toString(),price.getText().toString());
+                getActivity().onBackPressed();
             }
         });
 

@@ -1,4 +1,4 @@
-package com.example.ronig.myapplication.Objects;
+package com.example.ronig.myapplication.Objects.Products;
 
 public class Product {
 

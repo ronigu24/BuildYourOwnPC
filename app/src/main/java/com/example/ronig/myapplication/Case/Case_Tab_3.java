@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.Objects.Case_Object;
+import com.example.ronig.myapplication.Objects.Products.Case;
 import com.example.ronig.myapplication.R;
 
 public class Case_Tab_3 extends Fragment {
@@ -36,10 +36,10 @@ public class Case_Tab_3 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Case Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-                MainActivity.user_case= new Case_Object(text.getText().toString(),price.getText().toString());
-
+                //Intent i = new Intent(getActivity(),MainActivity.class);
+                //startActivity(i);
+                MainActivity.user_case= new Case(text.getText().toString(),price.getText().toString());
+                getActivity().onBackPressed();
             }
         });
 

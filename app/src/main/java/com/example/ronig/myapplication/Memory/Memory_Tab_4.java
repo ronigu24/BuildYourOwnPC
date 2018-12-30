@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.Objects.Memory_Object;
+import com.example.ronig.myapplication.Objects.Products.RAM;
 import com.example.ronig.myapplication.R;
 
 public class Memory_Tab_4 extends Fragment {
@@ -37,9 +37,10 @@ public class Memory_Tab_4 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Ram Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-                MainActivity.user_ram= new Memory_Object(text.getText().toString(),price.getText().toString());
+                //Intent i = new Intent(getActivity(),MainActivity.class);
+                //startActivity(i);
+                MainActivity.user_ram= new RAM(text.getText().toString(),price.getText().toString());
+                getActivity().onBackPressed();
 
             }
         });

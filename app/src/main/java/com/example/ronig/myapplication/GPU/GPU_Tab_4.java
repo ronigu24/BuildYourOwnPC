@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.Objects.GPU_Object;
+import com.example.ronig.myapplication.Objects.Products.GPU;
 import com.example.ronig.myapplication.R;
 
 public class GPU_Tab_4 extends Fragment {
@@ -38,9 +38,10 @@ public class GPU_Tab_4 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Gpu Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-                MainActivity.user_gpu= new GPU_Object(text.getText().toString(),price.getText().toString());
+                //Intent i = new Intent(getActivity(),MainActivity.class);
+                //startActivity(i);
+                MainActivity.user_gpu= new GPU(text.getText().toString(),price.getText().toString());
+                getActivity().onBackPressed();
 
             }
         });

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ronig.myapplication.Activities.MainActivity;
-import com.example.ronig.myapplication.Objects.MotherBoard_Object;
+import com.example.ronig.myapplication.Objects.Products.MotherBoard;
 import com.example.ronig.myapplication.R;
 
 public class MotherBoard_Tab_3 extends Fragment {
@@ -38,9 +38,10 @@ public class MotherBoard_Tab_3 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"MotherBoard Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),MainActivity.class);
-                startActivity(i);
-                MainActivity.user_motherboard= new MotherBoard_Object(text.getText().toString(),price.getText().toString());
+                //Intent i = new Intent(getActivity(),MainActivity.class);
+                //startActivity(i);
+                MainActivity.user_motherboard= new MotherBoard(text.getText().toString(),price.getText().toString());
+                getActivity().onBackPressed();
             }
         });
 
