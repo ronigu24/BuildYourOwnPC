@@ -45,9 +45,6 @@ public class LoginActivity extends AppCompatActivity {
 
         db = new DataBaseHelper(this);
 
-        //sp = getSharedPreferences("myPref", Context.MODE_PRIVATE);
-
-
         initViews();
 
 
@@ -154,9 +151,9 @@ public class LoginActivity extends AppCompatActivity {
 
         if(firstTime) {
             Log.d(TAG, "First entry of this device");
-            SharedPreferences.Editor speditor = sharedPref.edit();
-            speditor.putBoolean("Reload the Database!", false);
-            speditor.commit();
+            SharedPreferences.Editor sharedpref = sharedPref.edit();
+            sharedpref.putBoolean("Reload the Database!", false);
+            sharedpref.commit();
             db.Build_DataBase();
         }
 
