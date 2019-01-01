@@ -18,7 +18,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ronig.myapplication.Database.DataBaseHelper;
-import com.example.ronig.myapplication.Database.DataBaseQuery;
 import com.example.ronig.myapplication.R;
 
 import java.io.File;

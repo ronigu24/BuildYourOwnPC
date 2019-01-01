@@ -228,5 +228,6 @@
     <string name="ram">RAM</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
+    <string name="status_order_can_be_changed_by_clicking_on_order">Status order can be changed by clicking on order</string>
 
 </resources>

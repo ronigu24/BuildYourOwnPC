@@ -20,7 +20,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="407dp"
-        android:layout_height="651dp"
+        android:layout_height="567dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         android:adjustViewBounds="true"
@@ -34,5 +34,23 @@
         app:layout_constraintVertical_bias="0.0">
 
     </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/adminInfo"
+        android:layout_width="404dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:text="Status order can be changed by clicking on order"
+        android:textAllCaps="true"
+        android:textStyle="bold|italic"
+        android:translationX="20dp"
+        android:translationY="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view" />
 
 </android.support.constraint.ConstraintLayout>
