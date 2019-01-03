@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Build Your Own PC</string>
 
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
@@ -119,6 +119,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add">add</string>
+    <string name="buildyourownpc">BuildYourOwnPC</string>
     <string name="intel_core_i7_8700k_3_7ghz_12mb_cache_s1151v2_box">מעבד אינטל Intel Core i7 8700K 3.7Ghz 12MB Cache s1151v2 - Box</string>
     <string name="todo">TODO</string>
     <string name="title_activity_register_page">RegisterPage</string>
@@ -229,5 +230,7 @@
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="status_order_can_be_changed_by_clicking_on_order">Status order can be changed by clicking on order</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
 
 </resources>

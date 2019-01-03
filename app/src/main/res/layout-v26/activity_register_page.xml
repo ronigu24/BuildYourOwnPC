@@ -55,6 +55,7 @@
             android:id="@+id/submit_btn"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/mybutton"
 
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"

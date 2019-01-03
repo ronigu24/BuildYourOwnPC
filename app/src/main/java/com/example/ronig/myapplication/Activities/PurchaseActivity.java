@@ -89,13 +89,11 @@ public class PurchaseActivity extends AppCompatActivity {
                 mBuilder.setSmallIcon(R.drawable.order);
                 notificationManager.notify(1, mBuilder.build());
 
-                Intent i = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(i);
+                PurchaseActivity.super.onBackPressed();
+
                 finish();
             }
         });
-
-
 
     }
 

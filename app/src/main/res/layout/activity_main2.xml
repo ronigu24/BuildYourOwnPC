@@ -19,7 +19,9 @@
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:layout_marginBottom="16dp"
+        android:background="#B0BEC5"
         android:src="@drawable/order"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buy"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +72,8 @@
         app:layout_constraintBottom_toTopOf="@+id/motherBoard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <Button
         android:id="@+id/ssd"

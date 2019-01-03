@@ -17,6 +17,7 @@
 
         <Button
             android:id="@+id/Add_Gpu_Tab1"
+            android:background="@drawable/mybutton"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
